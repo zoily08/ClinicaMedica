@@ -1,0 +1,41 @@
+[
+   {
+      "name":"HEMATOLOGIA"
+   },
+   {
+      "name":"QUIMICA SANGUINEA"
+   },
+   {
+   	"name":"INMUNOLOGIA"
+   },
+   {
+   	"name":"ENDROCRINOLOGIA"
+   },
+   {
+   	"name":"URIANALISIS"
+   },
+   {
+   	"name":"ELECTROLITOS"
+   },
+   {
+   	"name":"COPROLOGIA"
+   },
+   {
+   	"name":"ENZIMAS"
+   },
+   {
+   	"name":"BACTEREOLOGIA"
+   },
+   {
+   	"name":"PERFIL PRENATAL"
+   },
+   {
+   	"name":"PERFIL EPATICO"
+   },
+   {
+   	"name":"PERFIL FEBRIL"
+   },
+   {
+   	"name":"PERFIL REUMATOIDEO"
+   }
+]

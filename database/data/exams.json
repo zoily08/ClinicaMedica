@@ -1,0 +1,358 @@
+[
+	{
+		"name":"Hemograma",
+		"areas":[1,10,12]
+	},
+	{
+		"name":"Leucograma",
+		"areas":[1]
+	},
+	{
+		"name":"Plaquetas",
+		"areas":[1,12]
+	},
+	{
+		"name":"Celulas LE",
+		"areas":[1]
+	},
+	{
+		"name":"Eritrosedimentacion",
+		"areas":[1,13]
+	},
+	{
+		"name":"Reticulocitos",
+		"areas":[1]
+	},
+	{
+		"name":"Gota Gruesa",
+		"areas":[1,12]
+	},
+	{
+		"name":"Frotis de Sangre P.",
+		"areas":[1]
+	},
+	{
+		"name":"Fibrinogeno",
+		"areas":[1]
+	},
+	{
+		"name":"T. de Sangrado",
+		"areas":[1]
+	},
+	{
+		"name":"T. de Coagulacion",
+		"areas":[1]
+	},
+	{
+		"name":"T. de Protombina",
+		"areas":[1]
+	},
+	{
+		"name":"T. de Tromboplastina p.",
+		"areas":[1]
+	},
+	{
+		"name":"Concentrado de Strout.",
+		"areas":[1]
+	},
+	{
+		"name":"Glucosa",
+		"areas":[2]
+	},
+	{
+		"name":"T a la Glucosa",
+		"areas":[2]
+	},
+	{
+		"name":"Colesterol",
+		"areas":[2,11]
+	},
+	{
+		"name":"Colesterol T.",
+		"areas":[2]
+	},
+	{
+		"name":"Colesterol HDL",
+		"areas":[2]
+	},
+	{
+		"name":"Colesterol LDL",
+		"areas":[2]
+	},
+	{
+		"name":"Trigliceridos",
+		"areas":[2]
+	},
+	{
+		"name":"Nitrogeno U",
+		"areas":[2]
+	},
+	{
+		"name":"Creatinina",
+		"areas":[2]
+	},
+	{
+		"name":"Acido Urico",
+		"areas":[2,13]
+	},
+	{
+		"name":"Bilirrubina",
+		"areas":[2,11]
+	},
+	{
+		"name":"Hemoglobina Glicosilada",
+		"areas":[2]
+	},
+	{
+		"name":"Transaminasas",
+		"areas":[2,8,11]
+	},
+	{
+		"name":"P. Emb. Sangre",
+		"areas":[3]
+	},
+	{
+		"name":"P. Emb. Orina",
+		"areas":[3]
+	},
+	{
+		"name":"VDRL",
+		"areas":[3]
+	},
+	{
+		"name":"ACIHIV",
+		"areas":[3]
+	},
+	{
+		"name":"Antigenos febriles",
+		"areas":[3,12]
+	},
+	{
+		"name":"Grupo Sanguineo y RH",
+		"areas":[3,10]
+	},
+	{
+		"name":"AC Hellcobacter pylori",
+		"areas":[3]
+	},
+	{
+		"name":"Hepatitis A, B, C.",
+		"areas":[3]
+	},
+	{
+		"name":"Anticuerpos para chagas",
+		"areas":[3]
+	},
+	{
+		"name":"Ag. Protastico Especifico (P.S.A)",
+		"areas":[3]
+	},
+	{
+		"name":"Ac. para Dengue",
+		"areas":[3]
+	},
+	{
+		"name":"Antiestraptolicina o.",
+		"areas":[3]
+	},
+	{
+		"name":"Latex RA",
+		"areas":[3,13]
+	},
+	{
+		"name":"Latex LE",
+		"areas":[3,13]
+	},
+	{
+		"name":"Ac. toxoplasma igG",
+		"areas":[3]
+	},
+	{
+		"name":"Ac. toxoplasma igM",
+		"areas":[3]
+	},
+	{
+		"name":"Ac. antinucleares (ANA)",
+		"areas":[3]
+	},
+	{
+		"name":"Ac. Carcino embrionario",
+		"areas":[3]
+	}   ,
+	{
+		"name":"T3, T4, TSH",
+		"areas":[4]
+	},
+	{
+		"name":"FSH",
+		"areas":[4]
+	},
+	{
+		"name":"LH",
+		"areas":[4]
+	},
+	{
+		"name":"Prolactina",
+		"areas":[4]
+	},
+	{
+		"name":"Progesterona",
+		"areas":[4]
+	},
+	{
+		"name":"Estradiol",
+		"areas":[4]
+	},
+	{
+		"name":"Cortisol",
+		"areas":[4]
+	},
+	{
+		"name":"Acido Vanil Mandelico",
+		"areas":[4]
+	},
+	{
+		"name":"Espermograma",
+		"areas":[4]
+	},
+	{
+		"name":"T3 Libre",
+		"areas":[4]
+	},
+	{
+		"name":"T4 Libre",
+		"areas":[4]
+	},
+	{
+		"name":"General de Orina",
+		"areas":[5]
+	},
+	{
+		"name":"Urocultivo",
+		"areas":[5]
+	},
+	{
+		"name":"Sodio",
+		"areas":[6]
+	},
+	{
+		"name":"Potasio",
+		"areas":[6]
+	},
+	{
+		"name":"Cloruro",
+		"areas":[6]
+	},
+	{
+		"name":"Fosforo",
+		"areas":[6]
+	},
+	{
+		"name":"Calcio",
+		"areas":[6]
+	},
+	{
+		"name":"Magnesio",
+		"areas":[6]
+	},
+	{
+		"name":"General de Heces",
+		"areas":[7]
+	},
+	{
+		"name":"Coprocultivo",
+		"areas":[7]
+	},
+	{
+		"name":"Sangre Oculta",
+		"areas":[7]
+	},
+	{
+		"name":"Azul de Metileno",
+		"areas":[7]
+	},
+	{
+		"name":"Substancias reductoras en Heces",
+		"areas":[7]
+	},
+	{
+		"name":"Gamma GT",
+		"areas":[8]
+	},
+	{
+		"name":"Amilasa",
+		"areas":[8]
+	},
+	{
+		"name":"Lipasa",
+		"areas":[8]
+	},
+	{
+		"name":"Fosfatasa Alcalina",
+		"areas":[8,11]
+	},
+	{
+		"name":"Fosfatasa Acida Protastica",
+		"areas":[8]
+	},
+	{
+		"name":"Bacilospia",
+		"areas":[9]
+	},
+	{
+		"name":"Tincio de Gram",
+		"areas":[9]
+	},
+	{
+		"name":"Directo al fresco",
+		"areas":[9]
+	},
+	{
+		"name":"Cultivo de BAAR",
+		"areas":[9]
+	},
+	{
+		"name":"Cultivos",
+		"areas":[9]
+	},
+	{
+		"name":"V.D.R.L",
+		"areas":[10]
+	},
+	{
+		"name":"E.G.O",
+		"areas":[10]
+	},
+	{
+		"name":"E.G.H",
+		"areas":[10]
+	},
+	{
+		"name":"GLISEMIA",
+		"areas":[10]
+	},
+	{
+		"name":"AC. HIV",
+		"areas":[10]
+	},
+	{
+		"name":"T Y V De Prot",
+		"areas":[11]
+	},
+	{
+		"name":"Albumina y Relacion A/G",
+		"areas":[11]
+	},
+	{
+		"name":"EGO",
+		"areas":[12]
+	},
+	{
+		"name":"Proteina C Reactiva",
+		"areas":[13]
+	},
+	{
+		"name":"ASTO",
+		"areas":[13]
+	}
+]
