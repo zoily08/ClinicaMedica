@@ -1,15 +1,10 @@
 @extends('layouts.admin')
 @section('content') 
 
-
 {!!Html::script('js/jQuery-2.1.4.min.js')!!}
 {!!Html::script('js/jquery.mask.min.js')!!}
 
-
-
-
 <script type="text/javascript">
-
  
 jQuery(function($) {
       $('input,form').attr('autocomplete','off');
@@ -21,192 +16,109 @@ jQuery(function($) {
 
 <div  class="row"  >
   <div  class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-  <!--<h3><font color="0e4743">Listado de Pacientes </font>-->
-  
-  <h3><FONT FACE="times new roman " size="6" color="0e4743" >Listado de Médicos</FONT>
-
-   @can('medico.create')
-    <a ><button type="button"  class="btn btn-success" data-toggle="modal" data-target="#exampleModal" title="Agregar un Nuevo Medico"          
-      style="color:#003366; background-color: #99CCFF"><span class="fa fa-plus-circle" color="0e4743"></span></button></a>
+    <h3><FONT FACE="times new roman " size="6" color="0e4743" >Listado de Médicos</FONT>
+      @can('medico.create')
+        <a ><button type="button"  class="btn btn-success" data-toggle="modal" data-target="#exampleModal" title="Agregar un Nuevo Medico" style="color:#003366; background-color: #99CCFF"><span class="fa fa-plus-circle" color="0e4743"></span></button></a>
       @endcan
-
-    {!!Form::open(array('url'=>'medico','method'=>'POST','autocomplete'=>'off'))!!}
-      {{Form::token()}}
-      
-
-      <div data-backdrop="static" class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
+      {!!Form::open(array('url'=>'medico','method'=>'POST','autocomplete'=>'off'))!!}
+        {{Form::token()}}
+          <div data-backdrop="static" class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
               <div class="modal-content modal-lg">
-                   <div style="background-image:url({{asset ('img/100.jpg')}});" class="modal-header">
-
-                     <!--<font  face="Comic Sans MS,arial,verdana" ><p align="center"><legend  align= "center" class="text-red" size="8">Registro de Nuevo Paciente</legend></p></font>
-
-                     <font  face="Comic Sans MS,arial,verdana" ><p align="center" class="text-red" size="8">Registro de Nuevo Paciente </p></font>-->
-
-                     <font size="6" face="Comic Sans MS,arial,verdana" color="0e4743"><p align="center" >Registro de Médicos</p></font>
-
-
-
-
-
-
-                     
-
-                      @if (count($errors)>0)
-                        <div class="alert alert-danger">
-                          <ul>
-                      
+                <div style="background-image:url({{asset ('img/100.jpg')}});" class="modal-header">
+                  <font size="6" face="Comic Sans MS,arial,verdana" color="0e4743"><p align="center" >Registro de Médicos</p></font>
+                    @if (count($errors)>0)
+                      <div class="alert alert-danger">
+                        <ul>
                           @foreach ($errors->all() as $error)
                             <li>{{$error}}</li>
-                      
                           @endforeach
-                          </ul>
-                       </div>
-                      @endif
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                        </button>
-                </div>
-
-                <div class="modal-body">
-
-
-      <br>
-
-  <form >
-   
-
-                 <br>
-    
-
-
-              
-
-                        <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
-                        <div class="form-group" >
-                              <label for="nombre" danger="text"><span> (*)Nombre del Médico :</span></label>
-                              <div class="input-group margin-bottom-sm">
-                                <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
-                                   <input autocomplete="off" placeholder=" Nombres del consultorio" minlength="3" onkeypress="return soloLetras(event)" onpaste="return false" class="form-control" autofocus type="text" name="nombre" id="nombre" required value="{{old('nombre medico')}}">
-                              </div>
-                        </div>
-                  </div>
-
-
-                  <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
-                        <div class="form-group" >
-                              <label for="apellido" danger="text"><span> (*)Apellidos  del Médico :</span></label>
-                              <div class="input-group margin-bottom-sm">
-                                <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
-                                   <input autocomplete="off" placeholder=" Apellidos del medico" minlength="3" onkeypress="return soloLetras(event)" onpaste="return false" class="form-control" autofocus type="text" name="apellido" id="apellido" required value="{{old('apellido medico')}}">
-                              </div>
-                        </div>
-                  </div>
-
-
-                  <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
-                       
-                       <div class="form-group">
-                                 <label for="telefono">Teléfono del Médico :</label>
-                            <div class="input-group margin-bottom-sm"   ><span    class="input-group-addon"><i  class="fa fa-phone"></i></span>
-                                    <input class="form-control" type="text" name="telefono" id="telefono" onkeypress="return sololetras(event)" placeholder="Teléfono">
-                            </div>
-                        </div>
-                  </div>
-
-                  <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
-                     <div class="form-group">
-                            <label for="direccion"><span> (*)  Dirección del Médico :</span></label>
-                         <div class="input-group margin-bottom-sm">
-                              <span class="input-group-addon"><i class="fa fa-map-marker fa-fw"></i></span>
-                              <input class="form-control" type="text" name="direccion" required value="{{old('direccion del medico')}}"  placeholder="Direccion del Medico...">
-                         </div>
+                        </ul>
                       </div>
+                    @endif
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
-
-                  
-
-                <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
-                  <div class="form-group">
-                    <label for="idespecialidad">(*) Especialidad:</label><div class="input-group margin-bottom-sm"><span class="input-group-addon"><i class="fa fa-user"></i></span>
-                      <select name="idespecialidad" class="form-control selectpicker" id="idespecialidad" data-live-search="true">
-                        @foreach($espe as $especialidad)
-                          <option value="{{$especialidad->idespecialidad}}">{{$especialidad->nombre}}</option>
-                        @endforeach
-                      </select>
+                <div class="modal-body">
+                <form >
+                  <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+                    <div class="form-group" >
+                      <label for="nombre" danger="text"><span> (*)Nombre del Médico :</span></label>
+                        <div class="input-group margin-bottom-sm">
+                          <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
+                            <input autocomplete="off" placeholder=" Nombres del consultorio" minlength="3" onkeypress="return soloLetras(event)" onpaste="return false" class="form-control" autofocus type="text" name="nombre" id="nombre" required value="{{old('nombre medico')}}">
+                        </div>
                     </div>
                   </div>
-                </div>
-                
-
-
-
-<br>
-
-<br>
-    
-                  <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
-                      <div class="form-group">
-                      <br>
-    
-                      
-                          <div class="input-group margin-bottom-sm">
-                              <p class="text-danger"> (*)  Campos requeridos</p>
-                          </div>
-                      </div>
-                  </div>
-
-
-                  </form>
-                  
-
-
-
-
-                </div>
-
-<br>
-
-             <div class="modal-footer" >
-                  <div class="form-group" >
-                  <br>
-
-                      <button class="btn btn-primary" style="color: white; background-color: #0a302d"  type="submit">
-                          <span class="fa fa-floppy-o">
-
-                          </span>  Guardar
-
-                       </button>
-
-                     
-
-
-                        <button type="reset" class="btn btn-primary" style="color: white; background-color: #98bff9"><span class="fa fa-ban"></span> Cancelar </button>
-                  
-                      <button type="reset" class="btn btn-danger" data-dismiss="modal" aria-label="Close">
-                    <span class="fa fa-retweet"></span>
-                    <span aria-hidden="true">Salir</span>
-                     </button>
-
+                  <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+                    <div class="form-group" >
+                      <label for="apellido" danger="text"><span> (*)Apellidos  del Médico :</span></label>
+                        <div class="input-group margin-bottom-sm">
+                          <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
+                          <input autocomplete="off" placeholder=" Apellidos del medico" minlength="3" onkeypress="return soloLetras(event)" onpaste="return false" class="form-control" autofocus type="text" name="apellido" id="apellido" required value="{{old('apellido medico')}}">
                         </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+                    <div class="form-group">
+                      <label for="telefono">Teléfono del Médico :</label>
+                        <div class="input-group margin-bottom-sm"><span class="input-group-addon"><i  class="fa fa-phone"></i></span>
+                          <input class="form-control" type="text" name="telefono" id="telefono" onkeypress="return sololetras(event)" placeholder="Teléfono">
+                        </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+                    <div class="form-group">
+                      <label for="direccion"><span> (*)  Dirección del Médico :</span></label>
+                        <div class="input-group margin-bottom-sm">
+                          <span class="input-group-addon"><i class="fa fa-map-marker fa-fw"></i></span>
+                          <input class="form-control" type="text" name="direccion" required value="{{old('direccion del medico')}}"  placeholder="Direccion del Medico...">
+                        </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
+                    <div class="form-group">
+                      <label for="idespecialidad">(*) Especialidad:</label><div class="input-group margin-bottom-sm"><span class="input-group-addon"><i class="fa fa-user"></i></span>
+                        <select name="idespecialidad" class="form-control selectpicker" id="idespecialidad" data-live-search="true">
+                          @foreach($espe as $especialidad)
+                            <option value="{{$especialidad->idespecialidad}}">{{$especialidad->nombre}}</option>
+                          @endforeach
+                        </select>
+                      </div>  
+                    </div>
+                  </div>
+                  <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
+                    <div class="form-group">
+                      <div class="input-group margin-bottom-sm">
+                        <p class="text-danger"> (*)  Campos requeridos</p>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+                </div>
+                <div class="modal-footer" >
+                  <div class="form-group" >
+                    <button class="btn btn-primary" style="color: white; background-color: #0a302d"  type="submit">
+                      <span class="fa fa-floppy-o"></span>  Guardar
+                    </button>
+                    <button type="reset" class="btn btn-primary" style="color: white; background-color: #98bff9"><span class="fa fa-ban"></span> Cancelar </button>
+                    <button type="reset" class="btn btn-danger" data-dismiss="modal" aria-label="Close">
+                      <span class="fa fa-retweet"></span>
+                      <span aria-hidden="true">Salir</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
-
-            
           </div>
         </div>
       </div>
-    </div>
 
-
-  </div>
-
-        {!!Form::close()!!}
-
-        <div class="row"> 
+{!!Form::close()!!}
+<div class="row"> 
   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
     <div class="table-responsive" style="overflow: auto" >
-
-
       <table  class="table datatable" style="text-align:center;">
 
      
