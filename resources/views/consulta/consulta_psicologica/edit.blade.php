@@ -20,7 +20,7 @@
       <br> 
         <div class="row">  
           <br>
-          <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+          <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12"> 
             <div class="form-group">
               <label for="idpaciente">(*) Paciente:</label><div class="input-group margin-bottom-sm"><span class="input-group-addon"><i class="fa fa-user"></i></span>
                   <input type="text" name="idpaciente" required value="{{$conp->nombre_p}}" class="form-control"  onkeypress="return soloLetras(event)"  >
@@ -40,6 +40,13 @@
               <textarea class="form-control" type="text" name="observacion" id="sintomas" rows="4" cols="40"  onkeypress="return soloLetras(event)"  placeholder="Observacion">{{$conp->observacion}}</textarea>
               </div>
             </div>
+          </div>
+          <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+            <div class="form-group">
+                <label for="fecha_consulta">(*) Fecha Consulta:</label><div class="input-group margin-bottom-sm"><span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                  <input class="form-control" id="fecha_consulta" type="date" name="fecha_consulta"  value="<?php echo formatoFecha($conp->fecha_consulta);?>" max = "<?php echo date("Y-m-d",strtotime(date("Y-m-d")."+ 0 days"));?>"> 
+                </div>
+              </div>
           </div>
           <div class="col-lg-22 col-sm-22 col-md-22 col-xs-12">
             <div class="form-group">

@@ -16,7 +16,7 @@
                     </div>
                 </div> 
                  
-            </div>
+            </div> 
             <div class="modal-footer">
                 <div style="text-align: right;">
                     <button  class="btn btn-primary" style="color: white; background-color: #0a302d" type="submit "><span class="fa fa-floppy-o"></span> Guardar </button>

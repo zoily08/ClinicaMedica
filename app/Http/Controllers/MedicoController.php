@@ -16,7 +16,7 @@ use Response;
 use Illuminate\Support\Collection;
 
 class MedicoController extends Controller
-{
+{ 
     public function _construct()
     {
          
@@ -102,35 +102,17 @@ class MedicoController extends Controller
         return Redirect::to('medico');
 
     }
+    public function destroy($id){
+        $medico=Medico::findOrFail($id);
 
-  
-
-
-   /* public function destroy(Consultorio $consultorio){
-        $consultorio->delete();
-         Alert::success('Eliminado con exito!!','Consultorio');
-        return Redirect::to('consultorio');
-      
-    }*/
-
-    
-
-
-
-     public function destroy($id){
-
-      $medico=Medico::findOrFail($id);
-
-    if ($medico->estado=='ACTIVO'){
-        
-        $medico->estado='INACTIVO';
-        
-    }
-    else{
-          if($medico->estado=='INACTIVO'){
+        if ($medico->estado=='ACTIVO'){
+            $medico->estado='INACTIVO';
+        }
+        else{
+            if($medico->estado=='INACTIVO'){
             $medico->estado='ACTIVO';
-          }
-    }
+        }
+         }
        $medico->update();
         
         //return Redirect::to('medico');

@@ -51,7 +51,7 @@ class ConsultaPsicologicaController extends Controller
         $consultap->observacion=$request->get('observacion');
         $consultap->fecha_consulta=$request->get('fecha_consulta');
         $consultap->estado='A RECETA';
-        $consultap->idpaciente=$request ->get('idpaciente');
+        $consultap->idpaciente=$request->get('idpaciente');
         $consultap->save();
         Alert::success('La Consulta Psicológica ha sido guardado con exito!!','ConsultaPsicologica');
         return redirect()->back(); 
@@ -70,7 +70,7 @@ class ConsultaPsicologicaController extends Controller
     }
  
     public function edit($id){
-        return view("consulta.consulta_psicologica.edit", ["consultap"=>SignosVitales::findOrFail($id)]);
+        return view("consulta.consulta_psicologica.edit", ["consultap"=>ConsultaPsicologica::findOrFail($id)]);
     }
 
 
@@ -79,9 +79,7 @@ class ConsultaPsicologicaController extends Controller
         $consultap=ConsultaPsicologica::findOrFail($id);
         $consultap->detalle=$request->get('detalle');
         $consultap->observacion=$request->get('observacion');
-        $mytime = Carbon::now('America/El_Salvador');
-        $consultap->fecha_consulta=$mytime->toDateTimeString();
-        $consultap->idpaciente=$request->get('idpaciente');
+        $consultap->fecha_consulta=$request->get('fecha_consulta');
         $consultap->update();
         return Redirect::to('consulta/consulta_psicologica');
     }
