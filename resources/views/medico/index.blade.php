@@ -38,11 +38,11 @@ jQuery(function($) {
                       <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body"> 
                 <form >
                   <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
                     <div class="form-group" >
-                      <label for="nombre" danger="text"><span> (*)Nombre del Médico :</span></label>
+                      <label for="nombre" danger="text"><span>  (*)Nombre del Médico :</span></label>
                         <div class="input-group margin-bottom-sm">
                           <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
                             <input autocomplete="off" placeholder=" Nombres del consultorio" minlength="3" onkeypress="return soloLetras(event)" onpaste="return false" class="form-control" autofocus type="text" name="nombre" id="nombre" required value="{{old('nombre medico')}}">
