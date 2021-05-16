@@ -17,9 +17,7 @@ jQuery(function($) {
 <div  class="row"  >
   <div  class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
     <h3><FONT FACE="times new roman " size="6" color="0e4743" >Listado de Médicos</FONT>
-      @can('medico.create')
         <a ><button type="button"  class="btn btn-success" data-toggle="modal" data-target="#exampleModal" title="Agregar un Nuevo Medico" style="color:#003366; background-color: #99CCFF"><span class="fa fa-plus-circle" color="0e4743"></span></button></a>
-      @endcan
       {!!Form::open(array('url'=>'medico','method'=>'POST','autocomplete'=>'off'))!!}
         {{Form::token()}}
           <div data-backdrop="static" class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
