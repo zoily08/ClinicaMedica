@@ -47,7 +47,7 @@
                   <input class="form-control" id="fecha_consulta" type="date" name="fecha_consulta"  value="<?php echo formatoFecha($conp->fecha_consulta);?>" max = "<?php echo date("Y-m-d",strtotime(date("Y-m-d")."+ 0 days"));?>"> 
                 </div>
               </div>
-          </div>
+          </div> 
           <div class="col-lg-22 col-sm-22 col-md-22 col-xs-12">
             <div class="form-group">
               <div style="text-align: right;">
@@ -55,7 +55,7 @@
                 <button type="reset" class="btn btn-primary" style="color: white; background-color: #98bff9"><span class="fa fa-ban"></span> Cancelar </button>
                 <button type="submit" class="btn btn-danger" data-dismiss="modal" aria-label="Close"> <span class="fa fa-retweet"></span><span aria-hidden="true">Salir</span></button>
               </div>
-            </div>
+            </div> 
           </div>
         </div>
     </div>
