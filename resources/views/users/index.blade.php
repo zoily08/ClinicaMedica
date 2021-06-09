@@ -159,7 +159,7 @@ function calcularEdad(fecha) {
                   <strong>
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right" style="color: black;" >{{ __('Nombre:') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right" style="color: black;" >{{ __('(*) Nombre:') }}</label>
 
                             <div class="col-md-6">
                             <div class="input-group margin-bottom-sm">
@@ -175,7 +175,7 @@ function calcularEdad(fecha) {
                         </div>
                         </div>
                         <div class="form-group row">
-                            <label for="apellidos" class="col-md-4 col-form-label text-md-right">{{ __('Apellidos:') }}</label>
+                            <label for="apellidos" class="col-md-4 col-form-label text-md-right">{{ __('(*) Apellidos:') }}</label>
 
                             <div class="col-md-6">
                             <div class="input-group margin-bottom-sm">
@@ -193,7 +193,7 @@ function calcularEdad(fecha) {
 
 
                         <div class="form-group row">
-                            <label for="direccion" class="col-md-4 col-form-label text-md-right">{{ __('Dirección:') }}</label>
+                            <label for="direccion" class="col-md-4 col-form-label text-md-right">{{ __('(*) Dirección:') }}</label>
 
                             <div class="col-md-6">
                             <div class="input-group margin-bottom-sm">
@@ -211,7 +211,7 @@ function calcularEdad(fecha) {
                         </div>
 
                         <div class="form-group row">
-                            <label for="fechanacimiento" class="col-md-4 col-form-label text-md-right">{{ __(' Fecha de Nacimiento:') }}</label>
+                            <label for="fechanacimiento" class="col-md-4 col-form-label text-md-right">{{ __('(*) Fecha de Nacimiento:') }}</label>
 
                             <div class="col-md-6">
                             <div class="input-group margin-bottom-sm">
@@ -251,7 +251,7 @@ function calcularEdad(fecha) {
                  </div>-->
 
                        <div class="form-group row">
-                            <label for="edad" class="col-md-4 col-form-label text-md-right">{{ __(' Edad:') }}</label>
+                            <label for="edad" class="col-md-4 col-form-label text-md-right">{{ __(' (*) Edad:') }}</label>
                             <div class="col-md-6">
                             <div class="input-group margin-bottom-sm">
                                <span class="input-group-addon"><i class="fa fa-pencil-square-o fa-fw"></i></span>
@@ -267,7 +267,7 @@ function calcularEdad(fecha) {
                         </div>
                 
                         <div class="form-group row">
-                            <label for="telefono" class="col-md-4 col-form-label text-md-right">{{ __('Telefono:') }}</label>
+                            <label for="telefono" class="col-md-4 col-form-label text-md-right">{{ __('(*) Teléfono:') }}</label>
 
                             <div class="col-md-6">
                             <div class="input-group margin-bottom-sm">
@@ -284,7 +284,7 @@ function calcularEdad(fecha) {
                         </div> 
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Dirección   de Correo Electrónico :') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('(*) Dirección   de Correo Electrónico :') }}</label>
 
                             <div class="col-md-6">
                             <div class="input-group margin-bottom-sm">
@@ -301,7 +301,7 @@ function calcularEdad(fecha) {
                         </div> 
 
                         <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Contraseña:') }}</label>
+                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('(*) Contraseña:') }}</label>
 
                             <div class="col-md-6">
                             <div class="input-group margin-bottom-sm">
@@ -318,7 +318,7 @@ function calcularEdad(fecha) {
                         </div> 
 
                         <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirmar Contraseña:') }}</label>
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('(*) Confirmar Contraseña:') }}</label>
 
                             <div class="col-md-6">
                             <div class="input-group margin-bottom-sm">
@@ -327,6 +327,13 @@ function calcularEdad(fecha) {
                             </div>
                       </div> 
                       </div>  
+                      <div class="col-md-6">
+                    <div class="form-group row">
+                      <div class="input-group margin-bottom-sm">
+                        <p class="text-danger"> (*)  Campos requeridos</p>
+                      </div>
+                    </div>
+                  </div>
                         <hr>
                
                   </strong>

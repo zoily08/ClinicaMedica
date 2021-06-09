@@ -84,9 +84,6 @@ class ProductoController extends Controller
         $producto->indicacion=$request->get('indicacion');
         $producto->estado='ACTIVO';
         $producto->idproveedor=$request->get('idproveedor');
-        
-        
-
         if(Input::hasFile('imagen')){
             $file=Input::file('imagen');
             $file->move(public_path().'/imagenes/productos/',$file->getClientOriginalName());
@@ -99,7 +96,7 @@ class ProductoController extends Controller
        // return Redirect::to('proveedor/producto'); 
     }
 
-    public function show($id){
+    public function show($id){ 
         $proveedor=DB::table('proveedor')->where('estado_p','=','Activo')->get();
         $prod=DB::table('producto as p')
             ->select('p.idproducto','p.codigo_barra','p.unidad_medida','p.nombre_producto','p.fecha_registro','p.imagen','p.margen_ganancia','p.indicacion','p.descuento','p.presentacion','p.estado','p.idproveedor')

@@ -386,7 +386,7 @@ jQuery(function($) {
                        <div class="form-group">
                                  <label for="telefono_p">(*)Teléfono:</label>
                             <div class="input-group margin-bottom-sm"   ><span    class="input-group-addon"><i      class="fa fa-phone"></i></span>
-                                    <input class="form-control" type="text" name="telefono_p" id="telefono_p" onkeypress="return sololetras(event)" required value="{{old('nombre del padre del paciente')}}" placeholder="Teléfono">
+                                    <input class="form-control" type="text" id="telefono_p" name="telefono_p"  onkeypress="return sololetras(event)" required value="{{old('nombre del padre del paciente')}}" placeholder="Teléfono">
                             </div>
                         </div>
                   </div>

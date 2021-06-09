@@ -2,7 +2,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div style="background-image: url({{asset ('img/100.jpg')}});" class="modal-header">
-                <font  size="6" face="Comic Sans MS,arial,verdana" color="0e4743"><p align="center">Nueva Enfermedad</p></font> 
+                <font  size="6" face="Comic Sans MS,arial,verdana" color="0e4743"><p align="center">Nuevo Tipo Consulta</p></font> 
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
