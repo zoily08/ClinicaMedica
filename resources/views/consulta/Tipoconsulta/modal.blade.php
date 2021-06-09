@@ -11,7 +11,7 @@
           <span aria-hidden="true">x</span>
         </button> 
       </div>
-              <font size="6" face="Comic Sans MS,arial,verdana" color="blue"><p align="center"><legend aling="center"  >¿DAR DE BAJA EL TIPO DE CONSULTA?</legend></p></font>
+              <font size="6" face="Comic Sans MS,arial,verdana" color="blue"><p align="center"><legend aling="center"  >¿DAR DE BAJA EL TIPO DE CONSULTA?</legend></p></font> 
        
           <div class="modal-body">
             <font size="3" face="Comic Sans MS,arial,verdana" color="#436b95"><p align="left" aling="center"> Confirme si desea dar de baja el Tipo de Consulta</p><br></font>

@@ -6,7 +6,7 @@
       				<font  size="6" face="Comic Sans MS,arial,verdana" color="0e4743"><p align="center">Registro Consulta Psicologica</p></font>
         				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
           					<span aria-hidden="true">&times;</span>
-       					</button>
+       					</button> 
        			</div>
        			 {!! Form::open(['route'=>'consulta_psicologica.store','method'=>'POST','autocomplete'=>'off']) !!}
        						<div class="modal-body">

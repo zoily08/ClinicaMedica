@@ -54,7 +54,7 @@ class ConsultaPsicologicaController extends Controller
         $consultap->idpaciente=$request->get('idpaciente');
         $consultap->save();
         Alert::success('La Consulta Psicológica ha sido guardado con exito!!','ConsultaPsicologica');
-        return redirect()->back(); 
+        return redirect()->back();  
     }
 
 
@@ -81,7 +81,7 @@ class ConsultaPsicologicaController extends Controller
         $consultap->observacion=$request->get('observacion');
         $consultap->fecha_consulta=$request->get('fecha_consulta');
         $consultap->update();
-        return Redirect::to('consulta/consulta_psicologica');
+        return Redirect::to('consulta/consulta_psicologica'); 
     }
      public function destroy($id){
         $consultap=ConsultaPsicologica::findOrFail($id);

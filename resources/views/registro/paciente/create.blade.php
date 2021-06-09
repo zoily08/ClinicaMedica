@@ -93,7 +93,7 @@ swal("Guardado con exito","Haz click en el boton","success")
    </div>
          {!!Form::open(array('url'=>'registro/paciente','method'=>'POST','autocomplete'=>'off'))!!}
          {{Form::token()}}
-      <div class="row">
+      <div class="row"> 
       
          <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
               <div class="form-group">

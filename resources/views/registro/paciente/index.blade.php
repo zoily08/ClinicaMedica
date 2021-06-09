@@ -240,7 +240,7 @@ jQuery(function($) {
           <div class="modal-dialog modal-lg" role="document">
               <div class="modal-content">
                    <div style="background-image:url({{asset ('img/100.jpg')}});" class="modal-header">
-                     <font size="6" face="Comic Sans MS,arial,verdana" color="0e4743"><p align="center" >Registro de Nuevo Paciente</p></font>
+                     <font size="6" face="Comic Sans MS,arial,verdana" color="0e4743"><p align="center" >Registro de Nuevo Pacienteeee</p></font>
                       @if (count($errors)>0)
                         <div class="alert alert-danger">
                           <ul>

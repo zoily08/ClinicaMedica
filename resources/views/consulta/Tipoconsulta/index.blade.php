@@ -39,13 +39,13 @@
             <a href="{{URL::action('tipoconsultaController@show',$tipo_consulta->idtipoconsulta)}}"><button type="button" class="btn btn-Secondary "><span class="fa fa-eye"></span></button></a> 
             <a class="btn btn-primary" style="color: white; background-color: #d2691e" data-toggle="modal" href="#modal-tipoconsulta-edit-{{ $tipo_consulta->idtipoconsulta }}"><i class="fa fa-pencil"></i></a>  
             @if($tipo_consulta->estado == 'ACTIVO')
-            <a href="" data-target="#modal-delete-{{$tipo_consulta->idtipoconsulta}}" data-toggle="modal"><button type="button" class="btn btn-primary" style="color: white; background-color: #166c66"><span class="fa fa-level-down"></span></button></a>
-            @else
+            <a href="" data-target="#modal-delete-{{$tipo_consulta->idtipoconsulta}}" data-toggle="modal"><button type="button" class="btn btn-primary" style="color: white; background-color: #166c66"><span class="fa fa-level-down"></span></button></a> 
+            @else 
             <a href="" data-target="#modal-delete-{{$tipo_consulta->idtipoconsulta}}" data-toggle="modal"><button type="button" class="btn btn-primary mb1 bg-red" style="color: #003366; background-color: #5affab"><span class="fa fa-level-up"></span></button></a>
             @endif
           </td>
         </tr>
-
+        @include('consulta.Tipoconsulta.modal')
         @include('consulta.Tipoconsulta.edit', ['tipoconsulta' => $tipo_consulta])
         @endforeach
       </table>

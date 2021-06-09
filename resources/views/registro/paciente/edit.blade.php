@@ -18,7 +18,7 @@
       $('#telefono_p').mask('9999-9999');
       $("#telefono_p").mask("0000-0000",{placeholder: '0000-0000'} );
    });
-
+ 
 </script>
 
 

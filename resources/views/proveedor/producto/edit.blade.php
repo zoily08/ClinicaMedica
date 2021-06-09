@@ -4,7 +4,7 @@
         <div class="modal-content"> 
             <div style="background-image: url({{asset ('img/100.jpg')}});" class="modal-header">
                             <!--<h3>NUEVO PRODUCTO</h3>-->
-                            <font  size="6" face="Comic Sans MS,arial,verdana" color="0e4743"><p align="center">Editaar Producto</p></font>
+                            <font  size="6" face="Comic Sans MS,arial,verdana" color="0e4743"><p align="center">Editar Producto</p></font>
                                 @if (count($errors)>0)  
                                     <div class="alert alert-danger">  
                                         <ul>

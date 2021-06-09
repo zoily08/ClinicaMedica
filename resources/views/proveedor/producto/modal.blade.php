@@ -23,7 +23,7 @@
 				</button> 
 				</div>
 					<font size="6" face="Comic Sans MS,arial,verdana" color="blue"><p align="center"><legend aling="center"  >¿DAR DE ALTA EL PRODUCTO?</legend></p></font>
-			
+			 
 					<div class="modal-body">
 						<font size="3" face="Comic Sans MS,arial,verdana" color="#436b95"><p align="left" aling="center"> Confirme si desea dar de alta el Producto</p><br></font>
 					</div>

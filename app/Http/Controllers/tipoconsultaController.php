@@ -72,7 +72,7 @@ class TipoconsultaController extends Controller
         }
         else{ 
             if($tipoconsulta->estado=='INACTIVO'){
-                $tipoconsulta->estado='ACTIVO';
+                $tipoconsulta->estado='ACTIVO'; 
             }
         }
         $tipoconsulta->update();
