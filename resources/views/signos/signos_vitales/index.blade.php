@@ -93,7 +93,7 @@
                 <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
 									<div class="form-group">
 										<label for="fecharegistro">(*) Fecha Registro:</label><div class="input-group margin-bottom-sm"><span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-  										<input class="form-control" type="date" name="fecharegistro" id="fecharegistro"  placeholder="Fecha Registro">
+  										<input class="form-control" type="date" name="fecharegistro" id="fechaActual"  required value="{{old('fecharegistro')}}" > 
 										</div>
 									</div> 
 								</div>
@@ -137,11 +137,6 @@
 				<thead style="background-color:#1c779e">
 					<th style="text-align:left;"><font color="white" >FECHA DE REGISTRO</th>
 					<th style="text-align:left;"><font color="white" >NOMBRE PACIENTE</th>
-					
-					<!--<th style="text-align:left;"><font color="white" >TEMPERATURA</th>
-					<th style="text-align:left;"><font color="white" >PRESION</th>
-					<th style="text-align:center;"><font color="white" >PESO</th>
-					<th style="text-align:center;"><font color="white" >ESTATURA</th>-->
 					<th style="text-align:center;"><font color="white" >ESTADO</th>
 					<th style="text-align:center;"><font color="white" >OPCIONES</th>      
 				</thead>
@@ -149,11 +144,6 @@
 				<tr>
 					<td align="left"><i class="fa fa-calendar"></i> <?php echo formatoFecha( $sig->fecharegistro);?></td>
 					<td align="left"><i class="fa fa-user"></i> {{$sig->nombre_p}} {{$sig->apellido_p}}</td>
-					
-					<!--<td align="left"><i class="fa fa-magic"></i> {{$sig->temperatura}} °C</td>
-					<td align="left"><i class="fa fa-stethoscope"></i> {{$sig->presionsistolica}} / {{$sig->presiondiastolica}} mmHg</td>
-					<td align="center"><i class="fa fa-clock-o"></i> {{$sig->peso}} lb</td>
-					<td align="center"><i class="fa fa-male"></i> {{$sig->estatura}} cm</td>-->
 					<td>
 						@if($sig->estado == 'A CONSULTA')
 
@@ -210,17 +200,18 @@
     		if(letras.indexOf(tecla)==-1 && !tecla_especial)
     			return false;
     	}
-    	window.onload = function(){
-    		var fecha = new Date(); //Fecha actual
-    		var mes = fecha.getMonth()+1; //obteniendo mes
-    		var dia = fecha.getDate(); //obteniendo dia
-    		var ano = fecha.getFullYear(); //obteniendo año
-    		if(dia<10)
-    			dia='0'+dia; //agrega cero si el menor de 10
-    		if(mes<10)
-    			mes='0'+mes //agrega cero si el menor de 10
-    		document.getElementById('fecharegistro').value=ano+"-"+mes+"-"+dia;
-    	}
+
+      window.onload = function(){
+        var fecha = new Date(); //Fecha actual
+        var mes = fecha.getMonth()+1; //obteniendo mes
+        var dia = fecha.getDate(); //obteniendo dia
+        var ano = fecha.getFullYear(); //obteniendo año
+        if(dia<10)
+          dia='0'+dia; //agrega cero si el menor de 10
+        if(mes<10)
+          mes='0'+mes //agrega cero si el menor de 10
+        document.getElementById('fechaActual').value=ano+"-"+mes+"-"+dia;
+      }
 
     	IMC=0;
     	$("#IMC").change(calculaIMC);
@@ -411,7 +402,7 @@ padding:6px;
 
 color: white;
 }
-
+ 
     </style>
 
          

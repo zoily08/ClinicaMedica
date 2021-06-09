@@ -84,7 +84,7 @@ class SignosVitalesController extends Controller
         $signos->fecharegistro=$request->get('fecharegistro');
         $signos->update();
          Alert::warning('Los Signos de '. $signos->nombre_p.' ha sido actualizado con exito!!','Signos');
-    	return Redirect::to('signos/signos_vitales');  
+    	return Redirect::to('signos/signos_vitales');   
     } 
 
     public function destroy($id){

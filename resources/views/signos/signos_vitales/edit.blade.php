@@ -18,7 +18,7 @@
             
             {!! Form::model($sig,['route'=>['signos_vitales.update',$sig->idsignos_vitales],'method'=>'PATCH','autocomplete'=>'off']) !!}
 
-
+ 
             <div class="modal-body">
             <br>
                 <div class="row"> 
@@ -78,14 +78,14 @@
 							<input type="text" name="IMC" id="IMC" required value="{{$sig->IMC}}" class="form-control" readonly="readonly"  placeholder="IMC...">
 						</div>
 					</div>
-				</div> 
+				</div>
 				<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
-					<div class="form-group">
-						<label for="fecharegistro">(*) Fecha Registro:</label><div class="input-group margin-bottom-sm"><span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-						<input class="form-control" id="fecharegistro" type="date" name="fecharegistro"  value="<?php echo formatoFecha($sig->fecharegistro);?>">
-						</div>
-      				</div>
-    			</div>
+                  <div class="form-group">
+                    <label for="fecharegistro">(*) Fecha Registro:</label><div class="input-group margin-bottom-sm"><span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                      <input class="form-control" id="fecharegistro" type="date" name="fecharegistro" value="<?php echo formatoFecha($sig->fecharegistro);?>">    
+                    </div>
+                  </div>
+                </div>  
 				<div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">	
 					<div class="form-group">
 						<div class="input-group margin-bottom-sm">

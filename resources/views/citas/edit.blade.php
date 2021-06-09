@@ -15,7 +15,7 @@
                                         </ul> 
                                     </div> 
                                 @endif
-                            </div>
+                            </div> 
                         
             
             {!! Form::model($cita,['route'=>['citas.update',$cita->idcitas],'method'=>'PATCH','autocomplete'=>'off']) !!}

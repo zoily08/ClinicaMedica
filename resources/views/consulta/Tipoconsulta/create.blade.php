@@ -11,13 +11,13 @@
             <div class="modal-body">
                 <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
                     <div class="form-group" >
-                        <label for="nombre" danger="text"><span> (*)Nombreoo de Tipo de Consulta:</span></label><div class="input-group margin-bottom-sm">
+                        <label for="nombre" danger="text"><span> (*)Nombre de Tipo de Consulta:</span></label><div class="input-group margin-bottom-sm">
                                 <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span><input class="form-control" type="text" name="nombre" id="nombre"></div>
                     </div>
                 </div>
                 <div class="modal-footer">
                 @include('layouts.modal_buttons')
-                </div>
+                </div> 
             {!! Form::close() !!}
             </div>
         </div>
