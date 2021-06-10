@@ -6,12 +6,15 @@ use Illuminate\Http\Request;
 
 use ClinicaMedica\Http\Requests;
 use ClinicaMedica\SignosVitales;
-use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Redirect; 
 use Illuminate\Support\Facades\Input;
 use ClinicaMedica\Http\Requests\SignosVitalesFormRequest;  
 use DB;
+use Alert;
 
-Use Alert;
+use Carbon\Carbon;
+use Response;
+use Illuminate\Support\Collection;
  
 class SignosVitalesController extends Controller
 {  

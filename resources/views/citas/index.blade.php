@@ -6,8 +6,8 @@
   
 
 <script type="text/javascript">
-
-  
+ 
+   
 
 window.onload = function(){
         var fecha = new Date(); //Fecha actual

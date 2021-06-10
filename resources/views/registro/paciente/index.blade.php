@@ -14,7 +14,7 @@
 <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
 <script type="text/javascript" src="jquery.min.js"></script>
 <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-<!--<link rel="stylesheet" type="text/css" href="sweetalert/sweetalert2.min.css">
+<!--<link rel="stylesheet" type="text/css" href="sweetalert/sweetalert2.min.css"> 
 <script type="text/javascript" src="sweetalert/sweetalert2.min.js" ></script>-->
 
 

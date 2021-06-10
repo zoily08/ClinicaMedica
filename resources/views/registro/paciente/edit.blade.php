@@ -19,7 +19,7 @@
       $("#telefono_p").mask("0000-0000",{placeholder: '0000-0000'} );
    });
  
-</script>
+</script> 
 
 
 <div data-backdrop="static" class="modal fade" id="modal-paciente-edit-{{ $pa->idpaciente }}"> 
