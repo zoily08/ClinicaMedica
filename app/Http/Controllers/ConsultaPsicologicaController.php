@@ -80,7 +80,7 @@ class ConsultaPsicologicaController extends Controller
         $consultap=ConsultaPsicologica::findOrFail($id);
         $consultap->detalle=$request->get('detalle');
         $consultap->observacion=$request->get('observacion');
-        $consultap->fecha_consulta=$request->get('fecha_consulta');
+        $consultap->fecha_consulta=$request->get('fecha_consulta'); 
         $consultap->update();
         Alert::warning('La Consulta se ha sido actualizado con exito!!','ConsultaPsicologica');
         return Redirect::to('consulta/consulta_psicologica'); 

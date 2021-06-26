@@ -23,7 +23,7 @@
           <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12"> 
             <div class="form-group">
               <label for="idpaciente">(*) Paciente:</label><div class="input-group margin-bottom-sm"><span class="input-group-addon"><i class="fa fa-user"></i></span>
-                  <input type="text" name="idpaciente" required value="{{$conp->nombre_p}}" class="form-control"  onkeypress="return soloLetras(event)"  >
+                  <input type="text" readonly name="idpaciente" required value="{{$conp->nombre_p}}" class="form-control"  onkeypress="return soloLetras(event)"  > 
               </div>
             </div>
           </div>

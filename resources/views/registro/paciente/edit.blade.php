@@ -139,7 +139,7 @@
                     <label for="telefono_p"><span> (*) Teléfono:</span></label> 
                       <div class="input-group margin-bottom-sm">
                         <span class="input-group-addon"><i class="fa fa-phone"></i></span>
-                          <input  onkeypress="return soloNumero(event)"  type="text" id="telefono_p" name="telefono_p" value="{{$pa->telefono_p}}" class="form-control" placeholder= "0000-0000" pattern="[]">
+                          <input  onkeypress="return soloNumero(event)"  type="text" id="telefono_p" name="telefono_p" value="{{$pa->telefono_p}}" class="form-control" placeholder= "0000-0000" >
                       </div>
                   </div> 
                 </div>
