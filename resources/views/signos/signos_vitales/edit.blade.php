@@ -1,3 +1,5 @@
+
+
 <div data-backdrop="static" class="modal fade" id="modal-signos-edit-{{ $sig->idsignos_vitales }}"> 
 <div class="modal-dialog modal-lg">
         <div class="modal-content"> 
@@ -82,19 +84,10 @@
 				<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
                   <div class="form-group">
                     <label for="fecharegistro">(*) Fecha Registro:</label><div class="input-group margin-bottom-sm"><span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                      <input class="form-control" id="fecharegistro" type="date" name="fecharegistro"  value="<?php echo formatoFecha($sig->fecharegistro);?>" max = "<?php echo date("Y-m-d",strtotime(date("Y-m-d")."+ 0 days"));?>">
+                      <input class="form-control" id="fecharegistro" type="date" name="fecharegistro" value="<?php echo date('Y-m-d', strtotime($sig->fecharegistro)) ?>" > 
                     </div>
                   </div>
-                </div>
-
-
-				<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
-                  <div class="form-group">
-                    <label for="fecharegistro">(*) Fecha Registro:</label><div class="input-group margin-bottom-sm"><span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                      <input class="form-control" id="fecharegistro" type="date" name="fecharegistro" value="<?php echo formatoFecha($sig->fecharegistro);?>">    
-                    </div>
-                  </div>
-                </div>  
+                </div> 
 				<div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">	
 					<div class="form-group">
 						<div class="input-group margin-bottom-sm">

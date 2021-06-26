@@ -22,7 +22,7 @@ window.onload = function(){
 
   $( "#fechaActual" ).date({
   beforeShowDay: $.datepicker.noWeekends
-});
+}); 
 }
 
 
@@ -241,93 +241,63 @@ else {
   </div>
 
         {!!Form::close()!!}
-
-        <div class="row"> 
+<div class="row"> 
   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
     <div class="table-responsive" style="overflow: auto" >
-
       <table  class="table datatable" style="text-align:center;">
-
         <thead style="background-color:#1c779e">
-
-          <th style="text-align:left">
-          <font color="white">FECHA DE CITA</font></th>
-
-          <th style="text-align:left">
-          <font color="white">HORA</font></th>
-
-          <th style="text-align:left">
-          <font color="white">OBSERVACION</font></th> 
-
-
-          <th style="text-align:left">
-          <font color="white">ESTADO</font></th> 
-
-          
-
-          <th style="text-align:center">
-          <font color="white">OPCIONES</font></th>
-
-         
-
-          
-          
-
+          <th style="text-align:left"><font color="white">FECHA DE CITA</font></th>
+          <th style="text-align:left"><font color="white">HORA</font></th>
+          <th style="text-align:left"><font color="white">OBSERVACION</font></th> 
+          <th style="text-align:left"><font color="white">ESTADO</font></th> 
+          <th style="text-align:center"><font color="white">OPCIONES</font></th>
         </thead>
-
         @foreach ($cits as $cita)
-        <tr onmouseover='this.style.background="#e5e4e2"' onmouseout='this.style.background="white"'>
-
-           <td  align="left"><i class="fa fa-user fa-fw"></i>{{ $cita-> fecha}}</td>
-
-           <td  align="left">{{ $cita-> hora}}</td>
-
-           
-
-           <td  align="left">{{ $cita-> observacion}}</td>
-
-           <td>
-            @if($cita->estado== 'ACTIVO')
-
-            <p class="text-center"><small class="label pull center p1 bg-olive">{{$cita->estado}} </small></p>
-                  @else
-                  <small class="label pull center p1 bg-red">{{$cita->estado}} </small>
-                  @endif
-
-          </td>
-        <td>
+          <tr onmouseover='this.style.background="#e5e4e2"' onmouseout='this.style.background="white"'>
+            <td align="left"><i class="fa fa-calendar"></i> <?php echo formatoFecha( $cita->fecha);?></td>
+            <td  align="left">{{ $cita-> hora}}</td>
+            <td  align="left">{{ $cita-> observacion}}</td>
+            <td>
+              @if($cita->estado== 'ACTIVO')
+                <p class="text-center"><small class="label pull center p1 bg-olive">{{$cita->estado}} </small></p>
+              @else
+                <small class="label pull center p1 bg-red">{{$cita->estado}} </small>
+              @endif
+            </td>
+            <td>
               @can('citas.edit')
-             <a class="btn btn-primary" style="color: white; background-color: #d2691e" data-toggle="modal" href="#modal-citas-edit-{{ $cita->idcitas }}"><i class="fa fa-pencil"></i></a>
+                <a class="btn btn-primary" style="color: white; background-color: #d2691e" data-toggle="modal" href="#modal-citas-edit-{{ $cita->idcitas }}"><i class="fa fa-pencil"></i></a>
               @endcan
-
-
-            @can('citas.destroy')
-              @if($cita->estado == 'ACTIVO')
-            
-            <a href="" data-target="#modal-delete-{{$cita->idcitas}}" data-toggle="modal"><button type="button" class="btn btn-primary" style="color: white; background-color: #166c66"><span class="fa fa-level-down"></span></button></a>
-            @else
-            <a href="" data-target="#modal-delete-{{$cita->idcitas}}" data-toggle="modal"><button type="button" class="btn btn-primary mb1 bg-red" style="color: #003366; background-color: #5affab"><span class="fa fa-level-up"></span></button></a>
-           
-            @endif
-             @endcan
-          
-</td>
-
-      </tr>
-             @include('citas.edit', ['cita' => $cita])
-             @include('citas.modal')
-              @endforeach
-
-
-          </table>
-        </div>
-          {{$cits->render()}}
-     </div>
-
-  
+              @can('citas.destroy')
+                @if($cita->estado == 'ACTIVO')
+                  <a href="" data-target="#modal-delete-{{$cita->idcitas}}" data-toggle="modal"><button type="button" class="btn btn-primary" style="color: white; background-color: #166c66"><span class="fa fa-level-down"></span></button></a>
+                @else
+                  <a href="" data-target="#modal-delete-{{$cita->idcitas}}" data-toggle="modal"><button type="button" class="btn btn-primary mb1 bg-red" style="color: #003366; background-color: #5affab"><span class="fa fa-level-up"></span></button></a>
+                @endif
+              @endcan
+            </td>
+          </tr>
+          @include('citas.edit', ['cita' => $cita])
+          @include('citas.modal')
+        @endforeach
+      </table>
+    </div>
+    {{$cits->render()}}
+  </div>
 </div>
 
-
+<?php 
+$time=time();
+    
+    function dameFecha($fecha,$dia){
+        list($year,$mon,$day)=explode('-',$fecha);
+        return date('Y-m-d',mktime(0,0,0,$mon,$day+$dia,$year));    
+    }
+   $total=0; 
+   function formatoFecha($fecha){
+    return date("d-m-Y",strtotime($fecha));
+  } 
+?>
    
 @endsection
 

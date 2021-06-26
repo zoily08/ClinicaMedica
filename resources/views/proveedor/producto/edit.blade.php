@@ -44,7 +44,7 @@
 		<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
 			<div class="form-group">
 				<label for="fecha_registro">(*) Fecha Registro:</label><div class="input-group margin-bottom-sm"><span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-					<input class="form-control" id="fecha_registro" type="date" name="fecha_registro"  value="<?php echo formatoFecha($prod->fecha_registro);?>" max = "<?php echo date("Y-m-d",strtotime(date("Y-m-d")."+ 0 days"));?>">  
+					<input class="form-control" id="fecha_registro" type="date" name="fecha_registro" value="<?php echo date('Y-m-d', strtotime($prod->fecha_registro)) ?>" >  
 
 				</div>
 			</div>

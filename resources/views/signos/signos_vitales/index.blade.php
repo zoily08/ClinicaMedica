@@ -1,5 +1,9 @@
 @extends('layouts.admin')
 @section('content')
+
+
+
+
 <div class="row">
   <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
     <h3><FONT FACE="times new roman" size="6" color="0e4743"> Toma de Signos Vitales </FONT>
@@ -11,7 +15,7 @@
     {!! Form::open(['route'=>'signos_vitales.store','method'=>'POST','autocomplete'=>'off']) !!}          
    
     <div data-backdrop="static" class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-dialog modal-lg" role="document"> 
         <div class="modal-content"> 
           <div style="background-image: url({{asset ('img/100.jpg')}});" class="modal-header">
             <font  size="6" face="Comic Sans MS,arial,verdana" color="0e4743"><p align="center">Registro de Signos Vitales</p></font>
@@ -93,7 +97,7 @@
                 <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
 									<div class="form-group">
 										<label for="fecharegistro">(*) Fecha Registro:</label><div class="input-group margin-bottom-sm"><span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-  										<input class="form-control" type="date" name="fecharegistro" id="fechaActual"  required value="{{old('fecharegistro')}}" > 
+  										<input class="form-control" type="date" name="fecharegistro" id="fechaActual"  required value="{{old('fecharegistro')}}" >  
 										</div>
 									</div> 
 								</div>
@@ -181,7 +185,7 @@
 </div>
 			
 
-@push('scripts')
+
 			<script>
 
     	function soloNumeros(e){
@@ -406,7 +410,6 @@ color: white;
     </style>
 
          
-@endpush
 
 <?php 
 $time=time();

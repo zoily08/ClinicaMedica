@@ -62,7 +62,7 @@
           <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
             <div class="form-group">
                 <label for="fecha_consulta">(*) Fecha Consulta:</label><div class="input-group margin-bottom-sm"><span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                  <input class="form-control" id="fecha_consulta" type="date" name="fecha_consulta"  value="<?php echo formatoFecha($conp->fecha_consulta);?>" max = "<?php echo date("Y-m-d",strtotime(date("Y-m-d")."+ 0 days"));?>"> 
+                  <input class="form-control" id="fecha_consulta" type="date" name="fecha_consulta" value="<?php echo date('Y-m-d', strtotime($conp->fecha_consulta)) ?>"> 
                 </div>
               </div> 
           </div> 

@@ -20,7 +20,7 @@
    });
  
 </script> 
-
+ 
 
 <div data-backdrop="static" class="modal fade" id="modal-paciente-edit-{{ $pa->idpaciente }}"> 
   <div class="modal-dialog modal-lg"> 

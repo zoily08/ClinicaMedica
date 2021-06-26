@@ -397,7 +397,7 @@ jQuery(function($) {
                      <div class="input-group margin-bottom-sm">
                       <span class="input-group-addon"><i class="fa fa-calendar fa-fw"></i></span>
                         <input  type="Date"  class="form-control"  name="fecha_registro_p"  id="fechaActual" required value="{{old('fecha_registro_p')}}"  placeholder="fecha_registro_p" max = "<?php echo date("Y-m-d",strtotime(date("Y-m-d")."+ 0 days"));?>">
-                        </div>
+                        </div> 
                   </div>
                </div>
             
