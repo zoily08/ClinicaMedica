@@ -1,21 +1,3 @@
-{!!Html::script('js/jquery.mask.min.js')!!}
-<script type="text/javascript">
- window.onload = function(){
-        var fecha = new Date(); //Fecha actual
-        var mes = fecha.getMonth()+1; //obteniendo mes
-        var dia = fecha.getDate(); //obteniendo dia
-        var ano = fecha.getFullYear(); //obteniendo año
-        if(dia<10)
-          dia='0'+dia; //agrega cero si el menor de 10
-        if(mes<10)
-          mes='0'+mes //agrega cero si el menor de 10
-        document.getElementById('fecha_consulta').value=ano+"-"+mes+"-"+dia;
-}
-</script>
-
-
-
-
 <div data-backdrop="static" class="modal fade" id="modal-consulta_psicologica-edit-{{ $conp->idconsulta_psicologica }}"> 
 <div class="modal-dialog modal-lg">
         <div class="modal-content"> 

@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Input;
 use ClinicaMedica\Http\Requests\ConsultaPsicologicaformRequest;  
 use DB;
+use Alert;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Validator;
 
@@ -73,7 +74,7 @@ class ConsultaPsicologicaController extends Controller
         return view("consulta.consulta_psicologica.edit", ["consultap"=>ConsultaPsicologica::findOrFail($id)]);
     }
 
-
+  
     public function update(ConsultaPsicologicaformRequest $request, $id){
 
         $consultap=ConsultaPsicologica::findOrFail($id);
@@ -81,6 +82,7 @@ class ConsultaPsicologicaController extends Controller
         $consultap->observacion=$request->get('observacion');
         $consultap->fecha_consulta=$request->get('fecha_consulta');
         $consultap->update();
+        Alert::warning('La Consulta se ha sido actualizado con exito!!','ConsultaPsicologica');
         return Redirect::to('consulta/consulta_psicologica'); 
     }
      public function destroy($id){
