@@ -28,25 +28,27 @@ class CitasController extends Controller
         $this->middleware('permission:citas.destroy')->only('destroy');
                     
 
-
+ 
     }
 
    
     public function index(Request $request){
         if($request){
             $query=trim($request->get('searchText'));
-            $cits=DB::table('citas')
-            
-            ->where('fecha','LIKE','%'.$query.'%')
-            //->where('estado_p','=','Activo')
-            ->orderBy('idcitas','desc')
-            ->paginate(10);
-
             $paci=DB::table('paciente')->where('estado_p','=','ACTIVO')->get();
             $medi=DB::table('medico')->where('estado','=','ACTIVO')->get();
             $consul=DB::table('consultorio')->where('estado','=','ACTIVO')->get();
-
             $espe=DB::table('especialidad')->where('estado','=','ACTIVO')->get();
+
+            $cits=DB::table('citas as c')
+            ->join('paciente as p', 'p.idpaciente','=','c.idpaciente')
+            ->select('c.idcitas','c.fecha','c.hora','c.observacion','c.idpaciente','c.idmedico','c.idconsultorio','c.idespecialidad','c.estado')
+            ->where('fecha','LIKE','%'.$query.'%')
+
+            ->orderBy('idcitas','desc')
+            ->paginate(10);
+
+            
            
             return view('citas.index',["cits"=>$cits,"paci"=>$paci,"medi"=>$medi,"consul"=>$consul,"espe"=>$espe,"searchText"=>$query]);
 
