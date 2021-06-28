@@ -20,7 +20,7 @@
             <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
               <div class="form-group">
                 <label>Paciente:</label><div class="input-group margin-bottom-sm"><span class="input-group-addon"><i class="fa fa-user"></i></span>
-                  <select name="idpaciente" class="form-control">
+                  <select name="idpaciente" id="idpaciente" class="form-control">
                     @foreach ($paci as $paciente)
                       @if ($paciente->idpaciente==$cita->idpaciente)
                         <option value="{{$paciente->idpaciente}}" selected>{{$paciente->nombre_p}}</option>
@@ -51,10 +51,14 @@
             </div>
             <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
               <div class="form-group">
-                <label for="idespecialidad">Especialidad:</label><div class="input-group margin-bottom-sm"><span class="input-group-addon"><i class="fa fa-user"></i></span>
-                  <select name="idespecialidad" class="form-control selectpicker" id="idespecialidad" data-live-search="true">
-                    @foreach($espe as $especialidad)
-                      <option value="{{$especialidad->idespecialidad}}">{{$especialidad->nombre}}</option>
+                <label>Especialidad:</label><div class="input-group margin-bottom-sm"><span class="input-group-addon"><i class="fa fa-user"></i></span>
+                  <select name="idespecialidad" id="idespecialidad" class="form-control">
+                    @foreach ($espe as $especialidad)
+                      @if ($especialidad->idespecialidad==$cita->idespecialidad)
+                        <option value="{{$especialidad->idespecialidad}}" selected>{{$especialidad->nombre}}</option>
+                      @else
+                        <option value="{{$especialidad->idespecialidad}}">{{$especialidad->nombre}}</option>
+                      @endif
                     @endforeach
                   </select>
                 </div>
@@ -62,31 +66,35 @@
             </div>
             <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
               <div class="form-group">
-                <label for="idmedico">Médicos:</label>
-                  <div class="input-group margin-bottom-sm"><span class="input-group-addon"><i class="fa fa-user"></i></span>
-                    <select name="idmedico" class="form-control selectpicker" id="idmedico" data-live-search="true">
-                      @foreach($medi as $medico)
-                        <option value="{{$medico->idmedico}}">{{$medico->nombre}}</option>
-                      @endforeach
-                    </select>
-                  </div>
+                <label>Médico:</label><div class="input-group margin-bottom-sm"><span class="input-group-addon"><i class="fa fa-user"></i></span>
+                  <select name="idmedico" id="idmedico" class="form-control">
+                    @foreach ($medi as $medico)
+                      @if ($medico->idmedico==$cita->idmedico)
+                        <option value="{{$medico->idmedico}}" selected>{{$medico->nombre}} {{$medico->apellido}}</option>
+                      @else
+                        <option value="{{$medico->idmedico}}">{{$medico->nombre}} {{$medico->apellido}}</option>
+                      @endif
+                    @endforeach
+                  </select>
+                </div>
               </div>
             </div>
-
-                <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
-                  <div class="form-group">
-                    <label for="idconsultorio">Consultorio:</label><div class="input-group margin-bottom-sm"><span class="input-group-addon"><i class="fa fa-user"></i></span>
-                      <select name="idconsultorio" class="form-control selectpicker" id="idconsultorio" data-live-search="true">
-                        @foreach($consul as $consultorio)
-                          <option value="{{$consultorio->idconsultorio}}">{{$consultorio->nombre}}</option>
-                        @endforeach
-                      </select>
-                    </div>
-                  </div>
+            <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+              <div class="form-group">
+                <label>Consultorio:</label><div class="input-group margin-bottom-sm"><span class="input-group-addon"><i class="fa fa-user"></i></span>
+                  <select name="idconsultorio" id="idconsultorio" class="form-control">
+                    @foreach ($consul as $consultorio)
+                      @if ($consultorio->idconsultorio==$cita->idconsultorio)
+                        <option value="{{$consultorio->idconsultorio}}" selected>{{$consultorio->nombre}}</option>
+                      @else
+                        <option value="{{$consultorio->idconsultorio}}">{{$consultorio->nombre}}</option>
+                      @endif
+                    @endforeach
+                  </select>
                 </div>
-
-
-                <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
+              </div>
+            </div>
+            <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
                       <div class="form-group">
                         <label for="observacion">(*) Observacion de la Cita:</label>
 

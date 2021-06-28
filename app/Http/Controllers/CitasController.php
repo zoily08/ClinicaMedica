@@ -106,6 +106,7 @@ class CitasController extends Controller
         $citas->idpaciente=$request->get('idpaciente');
         $citas->idmedico=$request->get('idmedico');
         $citas->idconsultorio=$request->get('idconsultorio');
+        $citas->idespecialidad=$request->get('idespecialidad');
 
         $citas->update();
         

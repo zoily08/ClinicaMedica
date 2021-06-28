@@ -32,7 +32,7 @@ class ProductoController extends Controller
         $this->middleware('permission:proveedor.producto.show')->only('show');
         $this->middleware('permission:proveedor.producto.destroy')->only('destroy');
      }
-    public function exportPdf()
+    public function exportPdf() 
     {
         $productos = Producto::get();
         $pdf   = PDF::loadView('pdf.producto', compact('productos'));
