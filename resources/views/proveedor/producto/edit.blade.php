@@ -17,10 +17,10 @@
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         			<span aria-hidden="true">&times;</span>
                         		</button>
-                            </div>  
+                            </div>   
                          
-            
-            {!! Form::model($prod,['route'=>['producto.update',$prod->idproducto],'method'=>'PATCH','autocomplete'=>'off']) !!} 
+             
+            {!! Form::model($prod,['route'=>['producto.update',$prod->idproducto],'method'=>'PATCH','autocomplete'=>'off', 'files'=>'true']) !!} 
 
 
             <div class="modal-body"> 
@@ -79,7 +79,7 @@
 							<option value="{{$prov->idproveedor}}" selected>{{$prov->nombre_p}}</option>
 						@else
 							<option value="{{$prov->idproveedor}}">{{$prov->nombre_p}}</option>
-						@endif
+						@endif 
 					@endforeach
 				</select>
 				</div>
@@ -104,8 +104,8 @@
 				<label for="imagen">(*) Imagen:</label><div class="input-group margin-bottom-sm"><span class="input-group-addon"><i class="fa fa-picture-o" ></i></span>
 					<input type="file" min="100px" max="100px" name="imagen"  class="form-control">
 						@if (($prod->imagen)!="")
-							<img src="{{asset('imagenes/productos/'.$prod->imagen)}}">
-						@endif
+							<img src="{{asset('imagenes/productos/'.$prod->imagen)}}" alt="$prod->nombre_producto" height="500px" width="500px" class="img-thumbnail" >
+						@endif 
 					</div>
 			</div>
 		</div>

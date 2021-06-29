@@ -90,10 +90,6 @@ class CitasController extends Controller
         return view("citas.show", ["citas"=>Citas::findOrFail($id)]);
     }
 
-
-     
-
-
     public function edit($id){
         return view("citas.edit", ["citas"=>Citas::findOrFail($id)]);
     }

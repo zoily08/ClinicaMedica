@@ -261,9 +261,9 @@
 						<a href="{{URL::action('ProductoController@show',$prod->idproducto)}}"><button type="button" class="btn btn-Secondary "><span class="fa fa-eye"></span></button></a>
 						 @endcan
 
-                         @can('proveedor.producto.edit')
+						 @can('proveedor.producto.edit')
 						<a class="btn btn-primary" style="color: white; background-color: #d2691e" data-toggle="modal" href="#modal-producto-edit-{{ $prod->idproducto }}"><i class="fa fa-pencil"></i></a>
-						  @endcan
+						@endcan
                         
                          @can('proveedor.producto.destroy')
 						@if($prod->estado == 'ACTIVO')

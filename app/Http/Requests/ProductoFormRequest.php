@@ -27,6 +27,7 @@ class ProductoFormRequest extends FormRequest
             'codigo_barra'=>'required', 
             'unidad_medida'=>'required|max:100',
             'nombre_producto'=>'required|max:100',
+            'imagen'=>'mimes:jpeg,jpg,bmp,png',
             'margen_ganancia'=>'required',
             'indicacion'=>'required',
             'descuento'=>'required',
