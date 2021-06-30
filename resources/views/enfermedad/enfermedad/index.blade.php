@@ -16,11 +16,11 @@
     </div> 
 </div>
 
-
+ 
 <div class="row"> 
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
 		<div class="table-responsive">
-			<table class="table table-striped table-bordered table-condensed table-hover" style="text-align:center;" >
+			<table class="table datatable style="text-align:center;" >
 				<thead style="background-color:#1c779e">
 					<th style="text-align:left;"><font color="white">NOMBRE ENFERMEDAD</th>  
 					<th style="text-align:center;"><font color="white">OPCIONES</th> 
@@ -28,7 +28,7 @@
 				@foreach ($enfermedad as $enf)
 				<tr onmouseover='this.style.background="#e5e4e2"' onmouseout='this.style.background="white"'>
 					<td align="left"><i class="fa fa-heartbeat"></i> {{ $enf->enfermedad}}</td>
-					<td align="center">
+					<td align="center"> 
 						<a href="{{URL::action('EnfermedadController@show',$enf->idenfermedad)}}"><button type="button" class="btn btn-Secondary "><span class="fa fa-eye"></span></button></a>
 						<a class="btn btn-primary" style="color: white; background-color: #d2691e" data-toggle="modal" href="#modal-enfermedad-edit-{{ $enf->idenfermedad }}"><i class="fa fa-pencil"></i></a>
 						

@@ -173,7 +173,7 @@
         <div class="table-responsive" style="overflow: auto" >
 
 
-          <table  class="table table-striped table-bordered table-condensed table-hover" style="text-align:center;">
+          <table  class= "table datatable" style="text-align:center;">
 
          
              <thead style="background-color:#1c779e">
