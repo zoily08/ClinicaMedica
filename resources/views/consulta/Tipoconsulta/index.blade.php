@@ -17,8 +17,8 @@
 
 <div class="row"> 
   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
-    <div class="table-responsive">
-      <table class="table table-striped table-bordered table-condensed table-hover" style="text-align:center;" >
+    <div class="table-responsive"> 
+      <table class="table datatable" style="text-align:center;" >
         <thead style="background-color:#1c779e">
           <th style="text-align:left;"><font color="white">NOMBRE TIPO DE CONSULTA</th>
           <th style="text-align:left;"><font color="white">ESTADO</th> 

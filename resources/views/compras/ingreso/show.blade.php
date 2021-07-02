@@ -1,93 +1,45 @@
 @extends ('layouts.admin')
 @section ('content')
 
+<div  style=" background-color:#f2f2f1 " >
+  <fieldset  style="min-width: 0;padding:.35em .625em .75em!important;margin:0 2px;
+  border:2px solid silver!important;margin-bottom: 10em;box-shadow: -6px 10px 20px 0px; ">
 
-
-<!--<div >
-      <div>
-            <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
-            <br>
-            <font size="6" face="Comic Sans MS,arial,verdana" color="blue"><p align="center" aling="center"> Información de la Compra</p><br></font>
-
-            </div>
-         </div>
-   </div>-->
-
-   <div  style=" background-color:#f2f2f1 " >
-
-
-               <fieldset  style="min-width: 0;padding:.35em .625em .75em!important;margin:0 2px;
-                border:2px solid silver!important;margin-bottom: 10em;box-shadow: -6px 10px 20px 0px; ">
-
-                 <legend  style="width: inherit;padding:inherit;border:2px solid silver;" class="legend" align= "center"  size="6" face="Comic Sans MS,arial,verdana" color="0e4743"><div style="color: #112b56"  ><B>Información  de la Compra</B></div></legend>
-   <br>
-      
-
-
-
-      
-<div class="container">
-
+  <legend  style="width: inherit;padding:inherit;border:2px solid silver;" class="legend" align= "center"  size="6" face="Comic Sans MS,arial,verdana" color="0e4743"><div style="color: #112b56"  ><B>Información  de la Compra</B></div></legend>
+  <br>
+  <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-10">
-
-
-
-      
-               
-               <!--<font size=6 face="Comic Sans MS,arial,verdana" color="red" ><p align="center"> Registro de la Compra </p></font>-->
-          
-
-        
-
-
-
-         <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
-            <div class="form-group">
-               <label for="proveeddor">Nombre del Proveedor: {{$compra->nombre_p}}</label>
+      <div class="col-md-10">
+        <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+          <div class="form-group">
+            <label for="proveeddor">Nombre del Proveedor: {{$compra->nombre_p}}</label>
                <p></p>
             </div>
          </div>
-
-
-          <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+         <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
             <div class="form-group">
                <label for="proveeddor">Nombre del Representante del Proveedor: {{$compra->nombre_p}}</label>
                <p></p>
             </div>
          </div>
-
          <div class="col-lg-3 col-sm-3 col-md-3 col-xs-10">
             <div class="form-group">
                <label>Tipo Comprobante: {{$compra->tipo_comprobante}}</label><p></p>
-               
-            </div>
+             </div>
          </div>
-
          <div class="col-lg-3 col-sm-3 col-md-3 col-xs-10">
             <div class="form-group">
                <label for="num_comprobante">Número Comprobante: {{$compra->num_comprobante}}</label>
             </div>
          </div>
-
-         
-
-
          <div class="col-lg-3 col-sm-3 col-md-3 col-xs-12">
             <div class="form-group">
                <label for="fecha_compra">Fecha de Compra:   <?php echo formatoFecha($compra->fecha_compra);?></label>
                <!--<p>{{$compra->fecha_compra}}</p>-->
-
-               
-               <p></p>
             </div>
          </div>
-
-         
-
-         
-      <div class="row">
-         <div class="panel panel-primary">
+         <div class="row">
+          <div class="panel panel-primary">
             <div class="panel-body">
                
                   <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
@@ -157,6 +109,10 @@
                       </div>
                </div>
             </div>
+            <div class="modal-footer">
+            <!--<a href="{{ route('paciente.pdf') }}"><button type="button"  class="btn btn-success" style="color: #003366; background-color: #e7fffe" ><span class="fa fa-download"> IMPRIMIR LISTADO DE PACIENTES</span></button></a>-->
+            <a href="{{URL::action('CompraController@index',$compra->idcompra)}}"><button type="button" class="btn btn-danger"><span class="fa fa-retweet" aria-hidden="true" > Regresar</span></button></a>
+          </div>
          
       </div>
 

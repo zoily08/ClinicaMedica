@@ -46,6 +46,10 @@
 
 
 					</table>
+					<div class="modal-footer">
+						<!--<a href="{{ route('paciente.pdf') }}"><button type="button"  class="btn btn-success" style="color: #003366; background-color: #e7fffe" ><span class="fa fa-download"> IMPRIMIR LISTADO DE PACIENTES</span></button></a>-->
+						<a href="{{URL::action('tipoconsultaController@index',$tipoconsulta->idtipoconsulta)}}"><button type="button" class="btn btn-danger"><span class="fa fa-retweet" aria-hidden="true" > Regresar</span></button></a>
+					</div>
 
 
 

@@ -20,13 +20,14 @@
 						</thead>
 					</table>
 				</div>
-			</div> 
+			</div>  
 		</div>
 		<div class="modal-footer">
-			<!--<a href="{{ route('paciente.pdf') }}"><button type="button"  class="btn btn-success" style="color: #003366; background-color: #e7fffe" ><span class="fa fa-download"> IMPRIMIR LISTADO DE PACIENTES</span></button></a>-->
-			<a href="{{URL::action('EspecialidadController@index',$especialidad->idespecialidad)}}"><button type="button" class="btn btn-danger"><span class="fa fa-retweet" aria-hidden="true" > Regresar</span></button></a>
+			<div class="col-lg-10 col-sm-10 col-md-10 col-xs-12">
+				<!--<a href="{{ route('paciente.pdf') }}"><button type="button"  class="btn btn-success" style="color: #003366; background-color: #e7fffe" ><span class="fa fa-download"> IMPRIMIR LISTADO DE PACIENTES</span></button></a>-->
+				<a href="{{URL::action('EspecialidadController@index',$especialidad->idespecialidad)}}"><button type="button" class="btn btn-danger"><span class="fa fa-retweet" aria-hidden="true" > Regresar</span></button></a>
+			</div>
 		</div>
-	</div>
 	</fieldset>
  </div>            
 		
