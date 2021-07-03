@@ -1,41 +1,16 @@
 @extends('layouts.admin')
 @section('content') 
-
-
-
-{!!Html::script('js/jQuery-2.1.4.min.js')!!}
-  {!!Html::script('js/jquery.mask.min.js')!!}
-
-
-
-   {!!Html::script('js/jquery-1.9.0.min.js')!!}
-   {!!Html::script('js/sweetalert.min.js')!!}
-   {!!Html::style('css/sweetalert.css')!!}
-    {!!Html::script('js/jquery-1.7.2.min.js')!!}
-     {!!Html::script('js/jquery.numeric.js')!!}
-   {!!Html::script('js/jquery.mask.min.js')!!}
-
-
-
 <script type="text/javascript">
-
-
-jQuery(function($) {
+  jQuery(function($) {
       $('input,form').attr('autocomplete','off');
       $("#telefono").mask("0000-0000",{placeholder: '0000-0000'} );
       //$('textarea,form').attr('autocomplete','off');
-   });
-
-
-
-         function llama_Edad() {
-
-     var a =calcularEdad($('#idfecha').val());
+    });
+  function llama_Edad() {
+    var a =calcularEdad($('#idfecha').val());
      $('#Idedad_p').val(a);
-    //alert("Holas");
-}
-
- 
+     //alert("Holas");
+   } 
 ////////
 function calcularEdad(fecha) {
         // Si la fecha es correcta, calculamos la edad
@@ -371,83 +346,45 @@ function calcularEdad(fecha) {
     </div >
 
   
-       {!!Form::close()!!}
-
-       <div class="row">
-  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-      <div class="table-responsive" style="overflow: auto">
-         <table  class="table datatable" style="text-align:center;">
-
-              <thead style="background-color:#1c779e">
-                  <tr>
-
-          <th style="text-align:left">
-          <font color="white">USUARIO</font></th>
-
-          <th style="text-align:left">
-          <font color="white">CORREO ELECTRONICO</font></th>
-
-          <th style="text-align:left">
-          <font color="white">DIRECCION</font></th>
-
-           <th style="text-align:center">
-          <font color="white">TELEFONO</font></th>
-
-          <th style="text-align:center" colspan="4">&nbsp;
-          <font color="white">OPCIONES</font></th>
+{!!Form::close()!!}
+<div class="row">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
+    <div class="table-responsive">
+      <table class="table datatable" style="text-align:center;" >
+        <thead style="background-color:#1c779e">
+          <tr>
+            <th style="text-align:left"><font color="white">USUARIO</font></th>
+            <th style="text-align:left"><font color="white">CORREO ELECTRONICO</font></th>
+            <th style="text-align:left"><font color="white">DIRECCION</font></th>
+            <th style="text-align:center"><font color="white">TELEFONO</font></th>
+            <th style="text-align:center;"><font color="white" >OPCIONES</th>
          </tr>
-              </thead>
-              <tbody>
-
+       </thead>
         @foreach($users as $user)
+        <tr onmouseover='this.style.background="#e5e4e2"' onmouseout='this.style.background="white"'>
+          <td align="left"><i class="fa fa-user fa-fw"></i>{{ $user->name }}</td>
+          <td align="left"><i class="fa fa-user fa-fw"></i>{{ $user->email }}</td>
+          <td align="left">{{ $user-> direccion}}</td>
+          <td >{{ $user->telefono}}</td>
 
-          <tr onmouseover='this.style.background="#e5e4e2"' onmouseout='this.style.background="white"'>
+          <td > 
+            @can('users.edit')
+              <a class="btn btn-primary" style="color: white; background-color: #d2691e" href="{{ route('users.edit', $user->id) }}" class="btn btn-sm btn-default"><i class="fa fa-pencil"></i></a>
+            @endcan
 
-                    <td align="left"><i class="fa fa-user fa-fw"></i>{{ $user->name }}</td>
-                    <td align="left"><i class="fa fa-user fa-fw"></i>{{ $user->email }}</td>
-                     <td align="left">{{ $user-> direccion}}</td>
-                     <td >{{ $user->telefono}}</td>
-
-                  <td width="10px"> 
-                       <td width="10px"> 
-                        @can('users.edit')
-                            <a class="btn btn-primary" style="color: white; background-color: #d2691e" href="{{ route('users.edit', $user->id) }}" class="btn btn-sm btn-default"><i class="fa fa-pencil"></i>
-                            </a>
-                            @endcan
-
-                    </td>
-
-                         <!--<td width="10px"> 
-                          
-                           @can('users.show')
-                                <a href="{{URL::action('UserController@show',$user->id)}}"><button type="button" class="btn btn-Secondary "><span class="fa fa-eye"></span></button></a>
-                                @endcan
-                                
-                         </td>-->
-
-
-           
-
-                               <td width="10px"> 
-                                 @can('users.destroy')
-                            {!! Form::open(['route' =>['users.destroy', $user->id], 'method'=>'DELETE']) !!}
-
-                            <button class="btn btn-primary" style="color: white; background-color: #166c66"><span class="fa fa-trash" ></span>
-                            </button>    
-                            {!! Form::close() !!}
-                            @endcan
-                             </td>
-                    </tr>
-
-                    @endforeach
-                     </tbody>
-                </table>    
-            
-                  {{ $users-> render() }}
-            </div>
-              
-            </div>
-        </div>
+            @can('users.destroy')
+              {!! Form::open(['route' =>['users.destroy', $user->id], 'method'=>'DELETE', 'class'=>'btn btn-sm btn-secondary']) !!}
+               <button class="btn btn-primary" style="color: white; background-color: #166c66"><span class="fa fa-trash" ></span></button>    
+              {!! Form::close() !!}
+            @endcan
+          </td>
+        </tr>
+        @endforeach
+      </table>    
+      {{ $users-> render() }}
+    </div>
+  </div>
+</div>
 
   
 

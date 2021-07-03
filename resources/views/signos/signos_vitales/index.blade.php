@@ -136,8 +136,7 @@
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
 		<FONT FACE="times new roman" size="4" color="0e4743"> Listado de Pacientes a Consulta </FONT>
     <div class="table-responsive" style="overflow: auto">
-      <table class="table table-striped table-bordered table-condensed table-hover datatable"
-                style="text-align:center;">
+      <table class="table table-striped table-bordered table-condensed table-hover datatable" style="text-align:center;">
 				<thead style="background-color:#1c779e">
 					<th style="text-align:left;"><font color="white" >FECHA DE REGISTRO</th>
 					<th style="text-align:left;"><font color="white" >NOMBRE PACIENTE</th>

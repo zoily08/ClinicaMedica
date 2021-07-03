@@ -14,7 +14,7 @@
         </h3>
         {{-- @include('enfermedad.enfermedad.search') --}} 
     </div> 
-</div>
+</div> 
 
  
 <div class="row"> 
