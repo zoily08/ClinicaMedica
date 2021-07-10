@@ -2,7 +2,7 @@
 @section('content')
 
 
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 
 <div class="row">
   <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
