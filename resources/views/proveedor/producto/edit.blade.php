@@ -1,4 +1,4 @@
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 <div data-backdrop="static" class="modal fade" id="modal-producto-edit-{{$prod->idproducto}}"> 
 <div class="modal-dialog modal-lg">
         <div class="modal-content"> 
@@ -58,7 +58,7 @@
 		</div>
 		<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
 			<div class="form-group">
-				<label for="margen_ganancia">(*) Margen Ganancia: ( % )</label><div class="input-group margin-bottom-sm"><span class="input-group-addon"><i class="fa fa-check"></i></span>
+				<label for="margen_ganancia">(*) Margen Ganancia: ( % )</label><div class="input-group margin-bottom-sm"><span class="input-group-addon"><i class="fa fa-percent"></i></span>
 					<input type="number" name="margen_ganancia" required value="{{$prod->margen_ganancia}}" class="form-control" title="00%">
 				</div>
 			</div>
@@ -94,7 +94,7 @@
 		</div>
 		<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
 			<div class="form-group">
-				<label for="descuento">(*) Descuento: ( % )</label><div class="input-group margin-bottom-sm"><span class="input-group-addon"><i class="fa fa-minus"></i></span>
+				<label for="descuento">(*) Descuento: ( % )</label><div class="input-group margin-bottom-sm"><span class="input-group-addon"><i class="fa fa-percent"></i></span>
 					<input type="text" name="descuento" required value="{{$prod->descuento}}" class="form-control" title="00%">
 				</div>
 			</div>

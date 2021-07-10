@@ -33,7 +33,7 @@ public function __construct(){
     public function index(Request $request){
         if($request){
             $query=trim($request->get('searchText'));
-            $compras=DB::table('compra as c')
+            $compras=DB::table('compra as c') 
             ->join('proveedor as p','c.idproveedor','=','p.idproveedor')
             ->join('detalle_compra as dc','c.idcompra','=','dc.idcompra')
             ->select('c.idcompra','c.num_comprobante','c.tipo_comprobante','c.presentacion','c.estado','c.fecha_compra','p.nombre_p',DB::raw('sum((dc.cantidad*precio_compra*dc.impuesto/100)+dc.cantidad*precio_compra) as total'))

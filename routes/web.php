@@ -21,7 +21,7 @@ Route::get('/', function () {
 
     Route::get('/home', 'HomeController@index')->name('home'); 
 
-///Routees
+///Routees 
  
 Route::middleware('auth')->group(function(){
 
@@ -161,7 +161,6 @@ Route::resource('consulta/especificacion','EspecificacionController');
 Route::resource('citas','CitasController');
 Route::resource('area', 'AreaController');
 Route::resource('exams', 'MedicalExamController');
-Route::resource('enfermedad','EnfermedadController');
 
 Route::post('sint_enf','SintomasController@sint_enf')->name('sint_enf.sint_enf');
 

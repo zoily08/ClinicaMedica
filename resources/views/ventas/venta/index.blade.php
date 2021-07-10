@@ -31,24 +31,26 @@
                 					</div>
                 					<div class="modal-body">
                   						<form>
-                    						<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
-                    							<div class="form-group">
-														<label for="paciente">Paciente</label>
-															<select name="idpaciente" id="idpaciente" class="form-control selectpicker" data-live-search="true">
-																@foreach($consult as $cons)
-																	<option value="{{$cons->idpaciente}}">{{$cons->nombre_p}} {{$cons->apellido_p}}</option>
-																@endforeach
-															</select>
-												</div>  
-											</div>
-                         					<div class="col-lg-3 col-sm-3 col-md-3 col-xs-12">
+                  							<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
 												<div class="form-group">
-													<label>Tipo Comprobante</label>
-														<select name="tipo_comprobante" class="form-control selectpicker" data-live-search="true">
+													<label for="paciente">(*) Paciente:</label><div class="input-group margin-bottom-sm"><span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
+  														<select name="idpaciente" id="idpaciente" class="form-control selectpicker" data-live-search="true">
+															@foreach($consult as $cons)
+																<option value="{{$cons->idpaciente}}">{{$cons->nombre_p}} {{$cons->apellido_p}}</option>
+															@endforeach
+														</select>
+													</div>
+												</div>
+											</div>
+											<div class="col-lg-3 col-sm-3 col-md-3 col-xs-12">
+												<div class="form-group">
+													<label for="tipo_comprobante">(*) Tipo Comprobante:</label><div class="input-group margin-bottom-sm"><span class="input-group-addon"><i class="fa fa-file-text-o"></i></span>
+  														<select name="tipo_comprobante" class="form-control selectpicker" data-live-search="true">
 															<option value="Boleta">Boleta</option>
 															<option value="Factura">Factura</option>
 															<option value="Ticket">Ticket</option>
 														</select>
+													</div>
 												</div>
 											</div>
 											<div class="col-lg-3 col-sm-3 col-md-3 col-xs-12">
@@ -59,50 +61,49 @@
 												</div> 
 											</div>
 											<div class="col-lg-3 col-sm-3 col-md-3 col-xs-12">
-                								<div class="form-group">
-                    								<label for="fecha_venta"><span>Fecha Registro</span></label>
-                     									<div class="input-group margin-bottom-sm">
-                      										<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                        										<input class="form-control"  type="date" name="fecha_venta"  id="fechaActual" required value="{{old('fecha_venta')}}"  placeholder="fecha_venta">
-                        								</div>
-                								</div>
-            								</div>
+												<div class="form-group">
+													<label for="fecha_venta">(*) Fecha Registro:</label><div class="input-group margin-bottom-sm"><span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+  													<input class="form-control" type="date" name="fecha_venta" id="fecha_venta"  placeholder="Fecha Registro" max = "<?php echo date("Y-m-d",strtotime(date("Y-m-d")."+ 0 days"));?>">
+													</div>
+												</div>
+											</div>
 											<div class="panel panel-primary">
                								 	<div class="panel-body">
-													<div class="col-lg-3 col-sm-3 col-md-3 col-xs-12">
-                  										<div class="form-group">
-                    										<label>Productos</label>
-                     											<select name="pidproducto" class="form-control selectpicker" id="pidproducto" data-live-search="true">
+               								 		<div class="col-lg-3 col-sm-3 col-md-3 col-xs-12">
+														<div class="form-group">
+															<label for="pidproducto">(*) Productos:</label><div class="input-group margin-bottom-sm"><span class="input-group-addon"><i class="fa fa-medkit"></i></span>
+	  															<select name="pidproducto" class="form-control selectpicker" id="pidproducto" data-live-search="true">
                        												@foreach($productos as $producto) 
                        													<option value="{{$producto->precio}}_{{$producto->desct}}_{{$producto->margen}}_{{$producto->precio_venta}}_{{$producto->cant_compra}}">{{$producto->producto}}</option>
                    		 											@endforeach  
                    			 									</select> 
-               											</div> 
-               										</div> 
+															</div>
+														</div>
+													</div>
                										<div class="col-lg-3 col-sm-3 col-md-3 col-xs-12">
-														<div class="form-group"><label for="precio_compra">Precio Compra</label>
+														<div class="form-group"><label for="precio_compra">(*) Precio Compra</label>
 															<div class="input-group margin-bottom-sm"><span class="input-group-addon"><i class="fa fa-usd fa-fw"></i></span>
 																<input type="number" disabled name="pprecio_compra" id="pprecio_compra" class="form-control" placeholder="P.Compra">
 															</div> 
 														</div>
 													</div>
 													<div class="col-lg-3 col-sm-3 col-md-3 col-xs-16">
-														<div class="form-group"><label for="precio_venta">Precio Venta</label>
+														<div class="form-group"><label for="precio_venta">(*) Precio Venta</label>
 															<div class="input-group margin-bottom-sm"><span class="input-group-addon"><i class="fa fa-usd fa-fw"></i></span>
 																<input type="number"  disabled name="pprecio_venta" id="pprecio_venta" class="form-control" step='0.01' placeholder="P. Venta"  > 
 															</div>
 														</div>
 													</div>
 													<div class="col-lg-3 col-sm-3 col-md-3 col-xs-12">
-														<div class="form-group"><label for="descuento">Descuento</label>
+														<div class="form-group"><label for="descuento">(*) Descuento</label>
 															<div class="input-group margin-bottom-sm"><span class="input-group-addon"><i class="fa fa-usd fa-fw"></i></span>
 																<input type="number" disabled name="pdescuento" id="pdescuento" class="form-control" placeholder="Descuento"  >
 															</div>
 														</div>
 													</div>
 													<div class="col-lg-3 col-sm-3 col-md-3 col-xs-12">
-														<div class="form-group"><label for="margen_ganancia">Margen de Ganancia % </label>
-															<div class="input-group margin-bottom-sm"><span class="input-group-addon"><i class="fa fa-usd fa-fw"></i></span>
+														<div class="form-group"><label for="margen_ganancia">(*) Margen de Ganancia % </label>
+															<div class="input-group margin-bottom-sm"><span class="input-group-addon"><i class="fa fa-percent fa-fw"></i></span>
 																<input type="number" disabled name="pmargen_ganancia" id="pmargen_ganancia" class="form-control" placeholder="Margen"  >
 															</div>
 														</div>
@@ -351,7 +352,7 @@
 		dia='0'+dia; //agrega cero si el menor de 10
 	if(mes<10)
 	mes='0'+mes //agrega cero si el menor de 10
-document.getElementById('fechaActual').value=ano+"-"+mes+"-"+dia;
+document.getElementById('fecha_venta').value=ano+"-"+mes+"-"+dia;
 }
 
 

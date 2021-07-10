@@ -20,7 +20,7 @@ class Enfermedad extends Model
 
 
      ]; 
-
+ 
 
       public function scopeSearch($query,$searchText)
     {

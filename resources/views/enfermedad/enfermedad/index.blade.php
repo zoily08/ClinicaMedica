@@ -1,8 +1,5 @@
 @extends('layouts.admin')
-
 @section('content')
-
-
 
 <div class="row">
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
@@ -28,25 +25,24 @@
 				@foreach ($enfermedad as $enf)
 				<tr onmouseover='this.style.background="#e5e4e2"' onmouseout='this.style.background="white"'>
 					<td align="left"><i class="fa fa-heartbeat"></i> {{ $enf->enfermedad}}</td>
-					<td align="center"> 
+					<td align="center">
 						<a href="{{URL::action('EnfermedadController@show',$enf->idenfermedad)}}"><button type="button" class="btn btn-Secondary "><span class="fa fa-eye"></span></button></a>
 						<a class="btn btn-primary" style="color: white; background-color: #d2691e" data-toggle="modal" href="#modal-enfermedad-edit-{{ $enf->idenfermedad }}"><i class="fa fa-pencil"></i></a>
 						
 						
-					</td>
+					</td> 
 				</tr>
 				@include('enfermedad.enfermedad.edit', ['enfermedad' => $enf])
 				@endforeach
 			</table>
 		</div>
 		<div class="text-center">
-            {{-- {{ $enfermedad->links() }} --}}
+            {{-- {{ $enfermedad->links () }} --}}
         </div>
 	</div>
 </div>
 
 @include('enfermedad.enfermedad.create') 
-
 
 @endsection 
 

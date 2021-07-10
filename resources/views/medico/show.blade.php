@@ -46,14 +46,6 @@
 		</div>
 	</div>
 </fieldset>
- </div>   
-
- 
-
-
-			
-
-
-
+</div>   
 @endsection
 

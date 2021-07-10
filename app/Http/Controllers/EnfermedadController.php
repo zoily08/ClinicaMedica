@@ -3,18 +3,15 @@
 namespace ClinicaMedica\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use ClinicaMedica\Http\Requests;
 use ClinicaMedica\Enfermedad;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Input;
 use ClinicaMedica\Http\Requests\EnfermedadFormRequest;  
 use DB;
-Use Alert;
-
-use Carbon\Carbon; 
-use Response;
-use Illuminate\Support\Collection; 
+use Alert;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Validator;
 
 class EnfermedadController extends Controller
 {
@@ -25,7 +22,6 @@ class EnfermedadController extends Controller
         $this->middleware('permission:enfermedad.index')->only('index');
         $this->middleware('permission:enfermedad.edit')->only(['edit','update']);
         $this->middleware('permission:enfermedad.show')->only('show');
-        $this->middleware('permission:enfermedad.destroy')->only('destroy');
                     
 
 
@@ -50,15 +46,14 @@ class EnfermedadController extends Controller
         return redirect()->back(); 
     }
 
-    public function show($id){  
+    public function show($id){
 
         return view("enfermedad.enfermedad.show", ["enfermedad"=>Enfermedad::findOrFail($id)]);
     }
 
-
-    public function edit(Sintomas $sintomas)
+    public function edit($id)
     {
-        
+         return view("enfermedad.enfermedad.show", ["enfermedad"=>Enfermedad::findOrFail($id)]);
     }
 
     public function update(EnfermedadFormRequest $request,$id)

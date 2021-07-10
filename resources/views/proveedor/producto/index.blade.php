@@ -1,5 +1,6 @@
 @extends('layouts.admin')
 @section('content') 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 <div class="row">
 	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
 
@@ -106,9 +107,10 @@
 										</div>
 									</div>
 								</div>
+
 								<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">	
 								 	<div class="form-group">
-										<label for="descuento">(*) Descuento:  ( % )</label><div class="input-group margin-bottom-sm"><span class="input-group-addon"><i i class="fa fa-minus" aria-hidden="true"></i></span>
+										<label for="descuento">(*) Descuento:  ( % )</label><div class="input-group margin-bottom-sm"><span class="input-group-addon"><i i class="fa fa-percent" aria-hidden="true"></i></span>
   										<input class="form-control" type="number" name="descuento" placeholder="Descuento" title="00%">
 										</div>
 									</div>

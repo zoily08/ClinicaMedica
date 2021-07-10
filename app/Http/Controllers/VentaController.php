@@ -31,15 +31,14 @@ class VentaController extends Controller
     		->orderBy('v.idventa','desc')
     		->groupBY('v.idventa','v.fecha_venta','v.tipo_comprobante','v.num_comprobante','v.total_venta','v.estado','p.nombre_p')
     		->paginate(10);
-
+ 
             $consult=DB::table('consulta_medica as cm')
             ->join('paciente as pac','cm.idpaciente','=','pac.idpaciente')
             ->select('pac.idpaciente','pac.nombre_p','pac.apellido_p') 
-            ->where('estado_c','=','VENTA')->get();
+            ->where('estado_c','=','A RECETA')->get();
   
             $productos=DB::table('producto as pro')
-            ->join('detalle_consulta_medica as dcm','pro.idproducto','=','dcm.idproducto')
-            ->join('detalle_compra as dc','dcm.idproducto','=','dc.idproducto')
+            ->join('detalle_compra as dc','pro.idproducto','=','dc.idproducto')
             ->select(DB::raw('CONCAT(pro.nombre_producto) AS producto'),'pro.idproducto',DB::raw('(dc.precio_compra) as precio'),DB::raw('(pro.descuento) as desct'),DB::raw('(pro.margen_ganancia)as margen'),DB::raw('ROUND(((dc.precio_compra) * (100 / (100 - pro.margen_ganancia))),2) as precio_venta'),DB::raw('(dc.cantidad) as cant_compra'))
             ->groupBY('producto','pro.idproducto','dc.precio_compra','pro.descuento','pro.margen_ganancia','dc.cantidad')
             ->where('estado','=','ACTIVO')

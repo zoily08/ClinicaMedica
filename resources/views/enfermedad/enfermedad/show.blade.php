@@ -1,5 +1,5 @@
 @extends ('layouts.admin')
-@section ('content') 
+@section ('content')  
 <div  style=" background-color:#f2f2f1 " >
     <fieldset  style="min-width: 0;padding:.35em .625em .75em!important;margin:0 2px;
     border:2px solid silver!important;margin-bottom: 10em;box-shadow: -6px 10px 20px 0px; ">
@@ -23,10 +23,9 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <div class="col-lg-10 col-sm-10 col-md-10 col-xs-12">
-                    <a href="{{ route('paciente.pdf') }}"><button type="button"  class="btn btn-success" style="color: #003366; background-color: #e7fffe" ><span class="fa fa-download"> IMPRIMIR LISTADO DE ENFERMEDAD</span></button></a>
-                </div>
-            </div>
+                <!--<a href="{{ route('paciente.pdf') }}"><button type="button"  class="btn btn-success" style="color: #003366; background-color: #e7fffe" ><span class="fa fa-download"> IMPRIMIR LISTADO DE PACIENTES</span></button></a>-->
+                <a href="{{URL::action('EnfermedadController@index',$enfermedad->idenfermedad)}}"><button type="button" class="btn btn-danger"><span class="fa fa-retweet" aria-hidden="true" > Regresar</span></button></a>
+        </div>
         </div>
     </fieldset>
  </div>            
