@@ -1,0 +1,129 @@
+{
+    "exam": {
+        "id": 90,
+        "name": "prueba",
+        "type": "Qu\u00edmico",
+        "inputs": [
+            {
+                "name": "campoA",
+                "type": "input",
+                "options": "false",
+                "classes": [
+                    "form-control"
+                ],
+                "attributes": [
+                    {
+                        "name": "placeholder",
+                        "value": "placeholder"
+                    },
+                    {
+                        "name": "title",
+                        "value": "title"
+                    }
+                ]
+            },
+            {
+                "name": "campo2",
+                "type": "select",
+                "options": [
+                    {
+                        "name": "q"
+                    },
+                    {
+                        "name": "w"
+                    },
+                    {
+                        "name": "e"
+                    },
+                    {
+                        "name": "r"
+                    },
+                    {
+                        "name": "t"
+                    },
+                    {
+                        "name": "y"
+                    },
+                    {
+                        "name": "u"
+                    },
+                    {
+                        "name": "a"
+                    }
+                ],
+                "classes": [
+                    "form-control"
+                ]
+            },
+            {
+                "name": "campoC",
+                "type": "textarea",
+                "options": "false",
+                "classes": [
+                    "form-control"
+                ],
+                "attributes": [
+                    {
+                        "name": "placeholder",
+                        "value": "placeholder"
+                    },
+                    {
+                        "name": "title",
+                        "value": "title"
+                    }
+                ]
+            }
+        ],
+        "price": 120.3,
+        "status": "Activo",
+        "created_at": "2019-09-21 17:30:18",
+        "updated_at": "2019-09-21 17:30:18",
+        "code": "PP15",
+        "areas": [
+            {
+                "id": 1,
+                "name": "HEMATOLOGIA",
+                "status": 1,
+                "date": "2019-09-20",
+                "created_at": "2019-09-20 20:12:13",
+                "updated_at": "2019-09-20 20:12:13",
+                "pivot": {
+                    "medical_exam_id": 90,
+                    "area_id": 1,
+                    "correlative": 15
+                }
+            },
+            {
+                "id": 2,
+                "name": "QUIMICA SANGUINEA",
+                "status": 1,
+                "date": "2019-09-20",
+                "created_at": "2019-09-20 20:12:13",
+                "updated_at": "2019-09-20 20:12:13",
+                "pivot": {
+                    "medical_exam_id": 90,
+                    "area_id": 2,
+                    "correlative": 14
+                }
+            },
+            {
+                "id": 3,
+                "name": "INMUNOLOGIA",
+                "status": 1,
+                "date": "2019-09-20",
+                "created_at": "2019-09-20 20:12:13",
+                "updated_at": "2019-09-20 20:12:13",
+                "pivot": {
+                    "medical_exam_id": 90,
+                    "area_id": 3,
+                    "correlative": 19
+                }
+            }
+        ]
+    },
+    "areas_id": [
+        1,
+        2,
+        3
+    ]
+}

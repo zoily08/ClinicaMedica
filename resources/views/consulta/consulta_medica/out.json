@@ -1,0 +1,115 @@
+{
+    "consulta": {
+        "idconsulta_medica": 1,
+        "idsignos_vitales": 1,
+        "idsintomas": 1,  
+        "inputs": [
+            {
+                "type": "input",
+                "options": "false",
+                "classes": [
+                    "form-control"
+                ],
+                "attributes": [
+                    {
+                        "name": "placeholder",
+                        "value": "placeholder"
+                    },
+                    { 
+                        "name": "title",  
+                        "value": "title"
+                    }
+                ]
+            },
+            {
+                "name": "campo2",
+                "type": "select",
+                "options": [
+                    {
+                        "name": "q"
+                    },
+                    {
+                        "name": "w"
+                    },
+                    {
+                        "name": "e"
+                    },
+                    {
+                        "name": "r"
+                    },
+                    {
+                        "name": "t"
+                    },
+                    {
+                        "name": "y"
+                    },
+                    {
+                        "name": "u"
+                    },
+                    {
+                        "name": "a"
+                    }
+                ],
+                "classes": [
+                    "form-control"
+                ]
+            },
+            {
+                "name": "campoC",
+                "type": "textarea",
+                "options": "false",
+                "classes": [
+                    "form-control"
+                ],
+                "attributes": [
+                    {
+                        "name": "placeholder",
+                        "value": "placeholder"
+                    },
+                    {
+                        "name": "title",
+                        "value": "title"
+                    }
+                ]
+            }
+        ],
+        "enfermedad": "Chikunguya",
+        "fecha_c": "2020-05-11",
+        "observacion": "NULL",
+        "estado_c": "A Receta",
+        "sintomas": [
+            {
+                "idsintomas": 1,
+                "nombre_sintomas": "Dolor de Cabeza",
+                "pivot": {
+                    "idconsulta_medica": 1,
+                    "idsintomas": 1,
+                    "correlative": 1
+                }
+            },
+            {
+                "idsintomas": 2,
+                "nombre_sintomas": "Dolor de Espalda",
+                "pivot": {
+                    "id_consulta_medica": 2,
+                    "idsintomas": 2,
+                    "correlative": 2
+                }
+            },
+            {
+                "idsintomas": 3,
+                "nombre_sintomas": "Vomito",
+                "pivot": {
+                    "idconsulta_medica": 3,
+                    "idsintomas": 3,
+                    "correlative": 3
+                }
+            }
+        ]
+    },
+    "idsintomas": [ 
+        1,
+        2,
+        3
+    ]
+}
