@@ -14,9 +14,9 @@ class Especificacion extends Model
 
      protected $fillable =[
      	 
-     	'idtipoconsulta',
-     	'idmedico',
-          'idpaciente'
+     	'idpaciente',
+          'idtipoconsulta',
+     	'idmedico'
      	 
      ];
 

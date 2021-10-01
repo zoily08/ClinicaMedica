@@ -21,14 +21,14 @@
           <th style="text-align:left;"><font color="white">ESTADO</th> 
           <th style="text-align:center;"><font color="white">OPCIONES</th>  
         </thead>
-        @foreach ($paciente as $pac)
+        @foreach ($especificacion as $pac)
         <tr onmouseover='this.style.background="#e5e4e2"' onmouseout='this.style.background="white"'>
           <td align="left"><i class="fa fa-user fa-fw"></i> {{ $pac->nombre_p}} {{ $pac->apellido_p }}</td>
            <td>
             @if($pac->estado_p == 'ACTIVO')
               <p class="text-center"><small class="label pull center p1 bg-olive">{{$pac->estado_p}} </small></p>
             @endif 
-          </td>
+          </td> 
 
           <td align="center">
             @can('consulta.especificacion.create')

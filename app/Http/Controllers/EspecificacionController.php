@@ -39,16 +39,20 @@ class EspecificacionController extends Controller
             $paciente=DB::table('paciente')->where('estado_p','=','ACTIVO')->get();
             $tipoconsulta=DB::table('tipoconsulta')->where('estado','=','ACTIVO')->get();
             $medico=DB::table('medico')->where('estado','=','ACTIVO')->get();
+            $especificacion=DB::table('especificacion as espe')
+            ->join('paciente as p','espe.idpaciente','=','p.idpaciente')
+            ->select('espe.idespecificacion','p.idpaciente','p.nombre_p','p.apellido_p','p.estado_p')
+            ->paginate(10);
             
-            return view('consulta.especificacion.index',["paciente"=>$paciente, "tipoconsulta"=>$tipoconsulta,"medico"=>$medico,"searchText"=>$query]);  
+            return view('consulta.especificacion.index',["paciente"=>$paciente, "tipoconsulta"=>$tipoconsulta,"medico"=>$medico,"especificacion"=>$especificacion,"searchText"=>$query]);  
 
-        } 
+        }  
 
     }
 
     public function create(){ 
         
-    }
+    } 
 
     public function store (EspecificacionFormRequest $request){
         $especificacion= new Especificacion;

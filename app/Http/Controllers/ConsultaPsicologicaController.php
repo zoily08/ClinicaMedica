@@ -28,7 +28,7 @@ class ConsultaPsicologicaController extends Controller
 
     }
     
-    public function index (Request $request){
+    public function index (Request $request){ 
         if($request){ 
 
             $query= trim($request->get('searchText'));
