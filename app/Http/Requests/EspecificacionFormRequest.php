@@ -24,11 +24,10 @@ class EspecificacionFormRequest extends FormRequest
     public function rules()
     {
         return [ 
-            
-            
+            'idpaciente'=>'required',
             'idtipoconsulta'=>'required',
-            'idmedico'=>'required',
-            'idpaciente'=>'required'
+            'idmedico'=>'required'
+            
                        
         ];
     }

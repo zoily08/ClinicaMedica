@@ -36,29 +36,30 @@ class EspecificacionController extends Controller
     public function index(Request $request){
         if($request){
             $query=trim($request->get('searchText')); 
-            $paciente=DB::table('paciente')->where('estado_p','=','ACTIVO')->get();
             $tipoconsulta=DB::table('tipoconsulta')->where('estado','=','ACTIVO')->get();
             $medico=DB::table('medico')->where('estado','=','ACTIVO')->get();
-            $especificacion=DB::table('especificacion as espe')
-            ->join('paciente as p','espe.idpaciente','=','p.idpaciente')
-            ->select('espe.idespecificacion','p.idpaciente','p.nombre_p','p.apellido_p','p.estado_p')
+
+
+
+            $especificacion=DB::table('paciente')
+            ->where('nombre_p','LIKE','%'.$query.'%')
+            ->where('estado_p','=','ACTIVO')
+            ->orderBy('idpaciente','des')  
             ->paginate(10);
+ 
+
             
-            return view('consulta.especificacion.index',["paciente"=>$paciente, "tipoconsulta"=>$tipoconsulta,"medico"=>$medico,"especificacion"=>$especificacion,"searchText"=>$query]);  
+            return view('consulta.especificacion.index',["tipoconsulta"=>$tipoconsulta,"medico"=>$medico,"especificacion"=>$especificacion,"searchText"=>$query]);  
 
         }  
 
     }
 
-    public function create(){ 
-        
-    } 
-
     public function store (EspecificacionFormRequest $request){
-        $especificacion= new Especificacion;
+        $especificacion= new Especificacion; 
+        $especificacion->idpaciente=$request->get('idpaciente');
         $especificacion->idtipoconsulta=$request->get('idtipoconsulta');
         $especificacion->idmedico=$request->get('idmedico');
-        $especificacion->idpaciente=$request->get('idpaciente');
         $especificacion->save();
         Alert::success('La Especificación ha sido guardado con exito!!','Especificación');
         return redirect()->back();  

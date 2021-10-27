@@ -9,7 +9,7 @@
        					</button> 
        			</div>
        			 {!! Form::open(['route'=>'consulta_psicologica.store','method'=>'POST','autocomplete'=>'off']) !!}
-       						<div class="modal-body"> 
+       						<div class="modal-body">  
       							<form> 
       								<div class="row"  style="background-color: #f2f2f1">
       									<div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
@@ -64,7 +64,7 @@
 									</div>
 								</div>
 							</div>
-							{!! Form::close() !!}
+						{!! Form::close() !!}
 						</div>
 					</div>
 				</div>

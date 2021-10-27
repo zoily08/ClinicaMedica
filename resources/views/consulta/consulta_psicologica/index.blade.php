@@ -17,13 +17,13 @@
 				</thead>
 				@foreach ($consultap as $conp)  
 				<tr onmouseover='this.style.background="#e5e4e2"' onmouseout='this.style.background="white"'>
-					<td align="left" ><i class="fa fa-user"></i> {{$conp->nombre_p}}</td>
+					<td align="left" ><i class="fa fa-user"></i> {{$conp->nombre_p}} </td>
 					<td> 
 							@if($conp->estado == 'A CONSULTA')
 								<p class="text-center"><small class="label pull center p1 bg-olive">{{$conp->estado}} </small></p>
 							@else  
               			@endif    
-          				</td>
+          				</td> 
 					<td>
 					<div style="text-align:center;">
 						@can('consulta.consulta_psicologica.create')
