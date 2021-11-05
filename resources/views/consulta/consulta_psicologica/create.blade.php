@@ -7,7 +7,7 @@
         				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
           					<span aria-hidden="true">&times;</span>
        					</button> 
-       			</div>
+       			</div> 
        			 {!! Form::open(['route'=>'consulta_psicologica.store','method'=>'POST','autocomplete'=>'off']) !!}
        						<div class="modal-body">  
       							<form> 
@@ -67,6 +67,7 @@
 						{!! Form::close() !!}
 						</div>
 					</div>
-				</div>
+				</div>	
 
  @endforeach
+

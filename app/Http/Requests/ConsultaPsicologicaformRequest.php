@@ -25,7 +25,6 @@ class ConsultaPsicologicaformRequest extends FormRequest
     {
            return [
             'detalle'=>'required',
-            'idpaciente'=>'required',
         ];
     }
     

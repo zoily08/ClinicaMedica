@@ -12,7 +12,7 @@
                                             @endforeach
                                         </ul> 
                                     </div> 
-                                @endif 
+                                @endif  
                             </div>  
     {!! Form::model($conp,['route'=>['consulta_psicologica.update',$conp->idconsulta_psicologica],'method'=>'PATCH','autocomplete'=>'off']) !!}
 

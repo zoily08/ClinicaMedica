@@ -6,6 +6,97 @@
 			<h3><FONT FACE="times new roman" size="6" color="0e4743"> Consulta Psicologica </FONT><a></a></h3>      		
 	</div>
 </div>
+
+{!!Form::open(array('url'=>'consulta/consulta_psicologica','method'=>'POST','autocomplete'=>'off'))!!}
+			{{Form::token()}}
+@foreach($consultap as $conp)
+<div data-backdrop="static" class="modal" id="exampleModal-{{$conp->idpaciente}}"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="overflow-y: scroll;">
+		<div class="modal-dialog modal-lg" role="document"> 
+   			<div class="modal-content"> 
+      			<div style="background-image: url({{asset ('img/100.jpg')}});" class="modal-header">
+      				<font  size="6" face="Comic Sans MS,arial,verdana" color="0e4743"><p align="center">Registro Consulta Psicologica</p></font>
+        				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          					<span aria-hidden="true">&times;</span> 
+       					</button> 
+       			</div>
+       			 
+       						<div class="modal-body">  
+      							<form> 
+      								<div class="row"  style="background-color: #f2f2f1">
+      									<div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
+      										<div class="form-group">
+      											<label for="idpaciente">Paciente</label>
+      												<div class="input-group margin-bottom-sm">
+  														<span class="input-group-addon"><i class="fa fa-street-view"></i></span>
+														<label name="idpaciente" class="form-control " id="idpaciente" data-live-search="true" >
+													
+                                                    <option value="{{$conp->idpaciente}}"> {{$conp->nombre_p}} {{$conp->apellido_p}} </option>
+                                               	 	
+                                            	</label>
+													</div>
+											</div>
+										</div>
+										<div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
+											<div class="form-group">
+												<label for="detalle">(*)  Detalle de la Consulta</label>
+													<textarea class="form-control" type="text" name="detalle"   rows="5" cols="50" placeholder="Detalle..."></textarea>
+											</div>
+										</div>
+										<div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
+											<div class="form-group">
+												<label for="observacion">(*)Observación</label>
+													<textarea class="form-control" type="text" name="observacion"   rows="5" cols="50" placeholder="Observación..."></textarea>
+                        					</div>
+										</div>
+										<div class="col-lg-6 col-sm-6 col-md-6 col-xs-12">
+									<div class="form-group">
+										<label for="fecha_consulta">(*) Fecha Registro:</label><div class="input-group margin-bottom-sm"><span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+  										<input class="form-control" type="date" name="fecha_consulta" id="fecha_consulta"  placeholder="fecha_consulta" max = "<?php echo date("Y-m-d",strtotime(date("Y-m-d")."+ 0 days"));?>">
+										</div>
+									</div>
+								</div>
+
+										
+									</div>
+									<div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">	
+								 		<div class="form-group">
+											<div class="input-group margin-bottom-sm">
+									 			<p class="text-danger">(*) Campos Requeridos</p>
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+							<div class="modal-footer">
+								<div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
+									<div class="form-group">
+										<button class="btn btn-primary" style="color: white; background-color: #0a302d" type="submit "><span class="fa fa-floppy-o"></span> Guardar </button>
+										<button type="reset" class="btn btn-primary" style="color: white; background-color: #98bff9"><span class="fa fa-ban"></span> Cancelar </button>
+										<button type="reset" class="btn btn-danger" data-dismiss="modal" aria-label="Close">
+											<span class="fa fa-retweet"></span>
+											<span aria-hidden="true">Salir</span>
+										</button>
+									</div>
+								</div>
+							</div>
+						
+						</div>
+					</div>
+				</div>
+@endforeach
+
+{!! Form::close() !!}
+
+
+
+
+
+
+
+
+
+
+
 <div class="row">
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
 		<div type="hidden" class="table-responsive" id="table_list" style="display:block">
@@ -53,10 +144,10 @@
 		{{$consultap->render()}}
 	</div>
 </div>
-@include('consulta.consulta_psicologica.create')
+
 <script type="text/javascript">
 
-	  window.onload = function(){
+    	window.onload = function(){
         var fecha = new Date(); //Fecha actual
         var mes = fecha.getMonth()+1; //obteniendo mes
         var dia = fecha.getDate(); //obteniendo dia
@@ -65,7 +156,7 @@
           dia='0'+dia; //agrega cero si el menor de 10
         if(mes<10)
           mes='0'+mes //agrega cero si el menor de 10
-        document.getElementById('fechaActual').value=ano+"-"+mes+"-"+dia;
+        document.getElementById('fecha_consulta').value=ano+"-"+mes+"-"+dia;
 }
 
 </script>		

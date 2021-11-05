@@ -1,56 +1,51 @@
 @extends('layouts.admin')
-
-@section('content') 
+@section('content')
 
 <div class="row">
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
         <h3>
-            <FONT FACE="times new roman" size="6" color="0e4743"> Listado para Especificar Tipo de Consulta </FONT>
+            <FONT FACE="times new roman" size="6" color="0e4743"> Listado de Especificacion</FONT>
+            <a><button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-especificacion-create" style="color: #003366; background-color:#99CCFF"><span class="fa fa-plus-circle" color="0e4743"></span> 
+            </button></a>
+
             
-            {{-- @include('consulta.especificacion.search') --}}
+
+            {{-- @include('sintomas.search') --}}
         </h3>
-        {{-- @include('consulta.especificacion.search') --}} 
-    </div> 
-</div> 
-<div class="row"> 
-  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
-    <div class="table-responsive"> 
-      <table class="table datatable" style="text-align:center;" >
-        <thead style="background-color:#1c779e">
-          <th style="text-align:left;"><font color="white">NOMBRE DEL PACIENTE</th>
-          <th style="text-align:left;"><font color="white">ESTADO</th> 
-          <th style="text-align:center;"><font color="white">OPCIONES</th>  
-        </thead>
-        @foreach ($especificacion as $espe)
-        <tr onmouseover='this.style.background="#e5e4e2"' onmouseout='this.style.background="white"'>
-          <td align="left"><i class="fa fa-user fa-fw"></i> {{ $espe->nombre_p}} {{ $espe->apellido_p }}</td>
-           <td>
-            @if($espe->estado_p == 'ACTIVO')
-              <p class="text-center"><small class="label pull center p1 bg-olive">{{$espe->estado_p}} </small></p>
-            @endif 
-          </td> 
-
-          <td align="center">
-            @can('consulta.especificacion.create')
-            <a href="" data-target="#modal-especificacion-create-{{$espe->idpaciente}}" data-toggle="modal"><button type="button" class="btn btn-primary" style="color: #003366; background-color:#99CCFF"><span class="fa fa-plus-circle"></span></button></a>
-
-            @endcan
-           
-          </td>
-        </tr>
-      
-        @endforeach
-      </table>
+        {{-- @include('sintomas.search') --}}   
     </div>
-    {{$especificacion->render()}}
-  </div>
+</div> 
+
+<div class="row"> 
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
+        <div class="table-responsive"> 
+            <table class="table datatable" style="text-align:center;" >
+                <thead style="background-color:#1c779e">
+                    <th style="text-align:left;"><font color="white" >PACIENTE</th>
+                    <th style="text-align:left;"><font color="white" >TIPO CONSULTA</th>
+                </thead>
+                <tbody>
+                    @foreach ($especificacion as $espe)   
+                        <tr>
+                            <td align="left"><i class="fa fa-user"></i> {{$espe->nombre_p}} {{$espe->apellido_p}}</td>
+                            <td>
+                                @if($espe->estado_espe == 'CONSULTA MEDICA')
+                                    <p class="text-center"><small class="label pull center p1 bg-olive">{{$espe->estado_espe}} </small></p>
+                                @else
+                                    <small class="label pull center p1 bg-red">{{$espe->estado_espe}} </small>
+                                @endif
+                            </td>
+                            
+                        </tr> 
+                       
+                    @endforeach
+                </tbody>
+            </table>
+            <div class="text-center">
+                {{-- {{ $especificacion->render() }} --}} 
+            </div>
+        </div>
+    </div>
 </div>
-  @include('consulta.especificacion.create') 
-@endsection 
-
-
-
-
-
-
-
+@include('consulta.especificacion.create')
+@endsection

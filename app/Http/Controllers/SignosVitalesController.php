@@ -31,7 +31,7 @@ class SignosVitalesController extends Controller
     public function index (Request $request){     
     	if($request){
     		$query= trim($request->get('searchText'));
-            $paciente=DB::select(DB::raw('SELECT * FROM paciente AS p LEFT JOIN (SELECT idpaciente AS id, estado FROM signos_vitales WHERE estado = "A CONSULTA") AS a ON idpaciente = id WHERE estado IS NULL AND estado_p = "ACTIVO"'));
+            $paciente=DB::select(DB::raw('SELECT * FROM paciente AS p LEFT JOIN (SELECT idpaciente AS id, estado FROM signos_vitales WHERE estado = "CONSULTA MEDICA") AS a ON idpaciente = id WHERE estado IS NULL AND estado_p = "ACTIVO"'));
     		$signos=DB::table('signos_vitales as sgv')
     		->join('paciente as p','sgv.idpaciente','=','p.idpaciente')
         	->select('sgv.idsignos_vitales','sgv.temperatura','sgv.presionsistolica','sgv.presiondiastolica','sgv.peso','sgv.estatura','sgv.IMC','p.nombre_p','p.apellido_p','sgv.estado','sgv.fecharegistro')

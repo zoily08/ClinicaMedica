@@ -7,21 +7,24 @@ use Illuminate\Database\Eloquent\Model;
 class Especificacion extends Model
 {
     protected $table= 'especificacion';
-    protected $primaryKey='idespecificacion'; 
+
+     protected $primaryKey='idespecificacion';
 
      public $timestamps=false;
 
      protected $fillable =[
-     	 
-     	'idpaciente',
-          'idtipoconsulta',
-     	'idmedico'
-     	 
-     ];
-
-     protected $guarded =[
+     	'estado_espe'  
+     ];    
 
 
-     ];
+     protected $guarded =[  
+  
+
+     ];  
+
+      public function scopeSearch($query,$searchText)
+    {
+        if($searchText)
+            return $query->where('estado_espe', 'LIKE',"%$searchText%");
+    }
 }
-
