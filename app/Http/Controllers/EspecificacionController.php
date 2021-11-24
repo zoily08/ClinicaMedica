@@ -40,7 +40,7 @@ class EspecificacionController extends Controller
         $especificacion->idpaciente=$request->get('idpaciente');
         $especificacion->estado_espe=$request->get('estado_espe');
         $especificacion->save(); 
-        Alert::success('El nuevo síntoma ha sido guardada con exito!!','Sintomas');
+        Alert::success('La nueva especificación ha sido guardada con exito!!','Especificación');
         return redirect()->back();
     }
 }

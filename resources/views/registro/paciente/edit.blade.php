@@ -67,7 +67,14 @@
                     <label> (*) Genero: </label>
                     <div class="input-group margin-bottom-sm">
                       <span class="input-group-addon"><i class="fa fa-users fa-fw"></i></span>
-                        <input onFocus="" type="text" name="genero_p" readonly="readonly" class="form-control" value="{{ $pa->genero_p}}">
+                      <select name="genero_p" data-live-search="true" class="form-control">  
+                        <option @if(old('genero_p',$pa->genero_p) == 'MASCULINO') selected @endif >
+                           MASCULINO
+                        </option>
+                        <option @if(old('genero_p',$pa->genero_p) == 'FEMENINO') selected @endif >
+                           FEMENINO
+                       </option>
+                      </select>
                     </div>
                   </div>
                 </div>
