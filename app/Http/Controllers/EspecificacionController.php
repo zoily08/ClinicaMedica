@@ -43,4 +43,14 @@ class EspecificacionController extends Controller
         Alert::success('La nueva especificación ha sido guardada con exito!!','Especificación');
         return redirect()->back();
     }
+
+
+     public function destroy($id){ 
+        $especificacion=Especificacion::findOrFail($id);
+        $especificacion->estado_espe='A SIGNOS VITALES';
+        $especificacion->update();
+         Alert::warning('El Paciente se ha enviado con exito!!','
+         	Especificacion');
+        return Redirect::to('consulta/especificacion'); 
+    }
 }

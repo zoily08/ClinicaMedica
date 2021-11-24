@@ -23,6 +23,7 @@
                 <thead style="background-color:#1c779e">
                     <th style="text-align:left;"><font color="white" >PACIENTE</th>
                     <th style="text-align:left;"><font color="white" >TIPO CONSULTA</th>
+                    <th style="text-align:center;"><font color="white" >OPCIONES</th>  
                 </thead>
                 <tbody>
                     @foreach ($especificacion as $espe)   
@@ -34,7 +35,17 @@
                                 @else
                                     <small class="label pull center p1 bg-red">{{$espe->estado_espe}} </small>
                                 @endif
+                            </td> 
+                            <td align="center">
+                                @can('signos.signos_vitales.destroy')
+                                <a href="" data-target="#modal-delete" data-toggle="modal"><button type="button" class="btn btn-primary" style="color: white; background-color: #166c66"><span class="fa fa-stethoscope"></span></button></a> 
+                                @endcan
+
+                                @can('signos.signos_vitales.destroy')
+                                <a href="" data-target="#modal-delete1" data-toggle="modal"><button type="button" class="btn btn-primary" style="color: white; background-color: #D4AC0D "><span class="fa fa-users"></span></button></a> 
+                                @endcan
                             </td>
+
                             
                         </tr> 
                        
